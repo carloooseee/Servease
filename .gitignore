@@ -1,0 +1,17 @@
+# Node dependencies
+Client/node_modules/
+Server/node_modules/
+
+# Build files
+Client/dist/
+Server/dist/
+
+# Environment variables
+Client/.env
+Server/.env
+
+# Logs and caches
+*.log
+.cache/
+.vscode/
+.DS_Store

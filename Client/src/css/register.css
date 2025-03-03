@@ -1,0 +1,79 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+.page{
+    display: flex;
+    width: 1000px;
+}
+button {
+    all: unset; 
+    cursor: pointer;
+    color: #3498db;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+  }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.register {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+.register h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+p {
+    color: black
+}
+form input{
+    margin-bottom: 10px;
+}
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="number"],
+.register input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.register input [type="submit"] {
+    width: 100%;
+    background: #005289;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.register input [type="submit"]:hover {
+    background: #2980b9;
+}
+.register label i {
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 14px;
+    color: #666;
+}
