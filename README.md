@@ -6,6 +6,7 @@ This project consists of a React frontend (Client) and a Node.js backend (Server
 ## Getting Started
 1. Using Git Bash : `git clone <your-repo-url>`
 2. Install Dependecies : Navigate to each folder separately and install dependencies:
+   
 Using Powershell : 
 ```
 cd Client - Go to Client Folder
@@ -49,3 +50,5 @@ ikaw lagi may kasalanan
 hindi ung pc mo
 
 bobo amp
+
+tanongin niyo nlng ako o si chatgpt
