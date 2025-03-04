@@ -32,8 +32,9 @@ function App() {
             <Route path="/Map" element={<Map/>}/>
           </Routes>
         </div>
-        <Footer/>
+        
       </div>
+      {/* <Footer/> */}
     </Router>
   );
 }

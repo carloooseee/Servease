@@ -4,6 +4,8 @@ const cors = require("cors");
 const session = require("express-session");
 const path = require("path");
 const authRoutes = require("./routes/authRoutes");
+const serviceRoutes = require("./routes/services"); 
+const bookingRoutes = require("./routes/booking"); 
 
 const app = express();
 
@@ -21,10 +23,12 @@ app.use(
 );
 
 // Serve React frontend
-app.use(express.static(path.join(__dirname, "../Client"))); 
+app.use(express.static(path.join(__dirname, "../Client")));
 
 // API Routes
-app.use("/auth", authRoutes); // Authentication routes
+app.use("/auth", authRoutes); 
+app.use("/api/services", serviceRoutes); 
+app.use("/api/bookings", bookingRoutes); 
 
 // Serve React for all other routes
 app.get("*", (req, res) => {

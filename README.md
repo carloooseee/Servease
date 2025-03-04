@@ -49,3 +49,4 @@ ikaw lagi may kasalanan
 hindi ung pc mo
 
 bobo amp
+1. How to kill node server.js
