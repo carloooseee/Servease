@@ -22,19 +22,30 @@ const Services = () => {
     }, [category]); // ✅ Fetches when `category` changes
 
     const handleBooking = async () => {
-        if (!selectedService || !bookingDate) return alert("Select a service and date.");
+        if (!selectedService || !bookingDate) {
+            return alert("Select a service and date.");
+        }
+    
         try {
-            const response = await fetch("http://localhost:3000/api/bookings", { // ✅ Ensure correct API endpoint
+            const response = await fetch("http://localhost:3000/api/bookings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ service_id: selectedService.id, user_id: 1, booking_date: bookingDate }) 
+                body: JSON.stringify({
+                    service_id: selectedService.id,
+                    user_id: 3, // Change this to the actual user ID
+                    booking_date: bookingDate // ✅ Match column name
+                })
             });
+    
             const data = await response.json();
             alert(data.message);
         } catch (error) {
             console.error("Error booking service:", error);
         }
     };
+    
+    
+    
 
     return (
         <div className="services-container">
