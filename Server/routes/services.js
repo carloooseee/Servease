@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../db"); // Ensure the correct DB connection
+const db = require("../db"); 
 
-// Fetch services (with optional category filtering)
+
 router.get("/", async (req, res) => {
     try {
         const category = req.query.category;
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
         const [services] = category
             ? await db.query(query, [category])
             : await db.query(query);
-
+            //Janmonique
         res.json(services);
     } catch (error) {
         console.error("Database error:", error);

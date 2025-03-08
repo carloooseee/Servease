@@ -1,0 +1,36 @@
+.navbar-collapse {
+    background-color: white; 
+    padding: 10px;
+    border-radius: 5px;
+    right: 0;
+  }
+  
+  .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+  
+  @media (max-width: 991px) { 
+    .navbar-collapse {
+      position: absolute;
+      top: 56px; 
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns links to the right */
+        text-align: right; /* Makes text align properly */
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
+        padding-right: 15px; /* Adds some spacing to the right */
+    }
+  }
+  

@@ -3,7 +3,8 @@ import { GoogleMap, LoadScript, DirectionsRenderer } from "@react-google-maps/ap
 import "../css/map.css"; 
 
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyCNKgjJFtvlUjPez_22J4mGSCAjXrTeDx8";
+const Key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+console.log("Google Maps API Key:", Key); // bobo ayaw basahin env
 
 const Map = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -55,7 +56,7 @@ const Map = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
+    <LoadScript googleMapsApiKey={Key}>
       <div className="map-container">
         <GoogleMap
           center={currentLocation || { lat: 0, lng: 0 }}

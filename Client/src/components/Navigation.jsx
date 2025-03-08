@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../images/logo.png";
+import "../css/navigation.css";
 
 function Navigation({ user }) { 
   return (

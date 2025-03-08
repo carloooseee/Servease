@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
     const user = users[0];
     console.log("User found:", user);
 
-    // Directly compare passwords (Not Recommended for Production)
+  
     if (password !== user.password) {
       console.log("Invalid credentials ❌");
       return res.status(401).json({ error: "Invalid credentials" });
@@ -57,6 +57,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-console.log("Session Secret Key:", process.env.SESSION_SECRET); // Check if the environment variable is set
+console.log("Session Secret Key:", process.env.SESSION_SECRET); 
 
 module.exports = router;
