@@ -44,6 +44,10 @@ cd ../Server - Go to Server Folder
 node server.js
 ```
 
+or preferably
+
+`nodemon server.js`
+
 ## Troubleshooting
 ikaw lagi may kasalanan
 
