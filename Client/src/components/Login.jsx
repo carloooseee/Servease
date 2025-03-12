@@ -17,7 +17,7 @@ const Login = ({ setUser }) => {
       setUser(res.data.user); // Set logged-in user
       navigate("/dashboard"); // Redirect to dashboard
     } catch (error) {
-      alert(error.response?.data?.message || "Login failed ❌");
+      alert(error.response?.data?.message || "Login failed");
     }
   };
 

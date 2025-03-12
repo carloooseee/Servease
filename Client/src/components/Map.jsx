@@ -36,7 +36,7 @@ const Map = () => {
     }
 
     const directionsService = new window.google.maps.DirectionsService();
-    const dlsudLocation = { lat: 14.2850, lng: 120.9584 }; // DLSU-D loc
+
 
     directionsService.route(
       {

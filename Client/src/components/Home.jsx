@@ -1,7 +1,8 @@
 import "../css/home.css"
 function Home(){
+    let Marti = "Home Page"
     return(
-        <h1>Home</h1>
+        <h1>{Marti}</h1>
     );
 }
 export default Home

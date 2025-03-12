@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getServices } from "../api"; // ✅ Import API call
+import { getServices } from "../api";
 import "../css/services.css";
 
 const Services = () => {
@@ -11,15 +11,15 @@ const Services = () => {
     useEffect(() => {
         const fetchServices = async () => {
             try {
-                const res = await getServices(category); // ✅ Use category filter
-                console.log("Fetched services:", res.data); // ✅ Debugging
+                const res = await getServices(category); 
+                console.log("Fetched services:", res.data); // Debugging
                 setServices(res.data);
             } catch (error) {
                 console.error("Error fetching services:", error);
             }
         };
         fetchServices();
-    }, [category]); // ✅ Fetches when `category` changes
+    }, [category]); // 
 
     const handleBooking = async () => {
         if (!selectedService || !bookingDate) {
@@ -32,8 +32,8 @@ const Services = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     service_id: selectedService.id,
-                    user_id: 3, // Change this to the actual user ID
-                    booking_date: bookingDate // ✅ Match column name
+                    user_id: 1, 
+                    booking_date: bookingDate 
                 })
             });
     
