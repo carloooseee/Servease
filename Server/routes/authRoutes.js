@@ -44,18 +44,28 @@ router.post("/login", async (req, res) => {
     const user = users[0];
     console.log("User found:", user);
 
-  
     if (password !== user.password) {
       console.log("Invalid credentials ❌");
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    res.json({ message: "Login successful ✅"});
+    // ✅ Send back user info (excluding password)
+    res.json({
+      message: "Login successful ✅",
+      user: {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        phone_number: user.phone_number
+      }
+    });
   } catch (error) {
     console.error("Login failed ❌", error);
     res.status(500).json({ error: "Login failed" });
   }
 });
+
 
 console.log("Session Secret Key:", process.env.SESSION_SECRET); 
 

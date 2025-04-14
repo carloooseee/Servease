@@ -1,8 +1,30 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Logo from "../images/logo.png";
 import "../css/navigation.css";
 
-function Navigation({ user }) { 
+function Navigation({ user: propUser }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    try {
+      const storedUser = localStorage.getItem("user");
+      if (storedUser && storedUser !== "undefined") {
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
+      }
+    } catch (error) {
+      console.error("Failed to parse user from localStorage:", error);
+      localStorage.removeItem("user");
+    }
+  }, [propUser]); // updates when props change
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    window.location.href = "/"; // or use navigate
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div className="container-fluid">
@@ -19,7 +41,7 @@ function Navigation({ user }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav ms-auto"> 
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 Home
@@ -45,9 +67,26 @@ function Navigation({ user }) {
                 Map
               </Link>
             </li>
-            <li className="nav-item">
-              {user ? (  
-                <Link className="nav-link" to="/Profile">Profile</Link>
+
+            <li className="nav-item dropdown">
+              {user ? (
+                <>
+                  <div
+                    className="nav-link dropdown-toggle"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${user.name || "User"}`}
+                      alt="Profile"
+                      style={{ width: "30px", height: "30px", borderRadius: "50%" }}
+                    />
+                  </div>
+                  <ul className="dropdown-menu dropdown-menu-end">
+                    <li><Link className="dropdown-item" to="/Profile">Profile</Link></li>
+                    <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
+                  </ul>
+                </>
               ) : (
                 <Link className="nav-link" to="/Login">Login</Link>
               )}
