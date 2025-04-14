@@ -1,0 +1,39 @@
+.footer-container {
+  margin-top: 3rem;
+}
+
+.footer {
+  background-color: #1c2331;
+  color: white;
+  text-align: center;
+}
+
+.social-left {
+  margin-right: 1.5rem;
+}
+
+.social-right .social-icon {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.footer-links-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; /* Adjust the gap between columns if needed */
+  }
+
+  
