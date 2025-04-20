@@ -7,6 +7,7 @@ const Services = () => {
     const [category, setCategory] = useState("");
     const [selectedService, setSelectedService] = useState(null);
     const [bookingDate, setBookingDate] = useState("");
+    const user = JSON.parse(localStorage.getItem("user"));
 
     useEffect(() => {
         const fetchServices = async () => {
@@ -25,23 +26,28 @@ const Services = () => {
         if (!selectedService || !bookingDate) {
             return alert("Select a service and date.");
         }
-    
-        try {
+        if(user){
+            try {
             const response = await fetch("http://localhost:3000/api/bookings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     service_id: selectedService.id,
-                    user_id: 1, 
+                    user_email: user.email, 
                     booking_date: bookingDate 
                 })
             });
-    
+            return alert("Succesful Booking.");
             const data = await response.json();
             alert(data.message);
-        } catch (error) {
-            console.error("Error booking service:", error);
+            } catch (error) {
+                console.error("Error booking service:", error);
+            }
         }
+        else{
+            return alert("No user logged in.");
+        }
+        
     };
     
     
