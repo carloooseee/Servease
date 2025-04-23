@@ -7,9 +7,9 @@
     width: 100vw;
     gap: 5%;
     background-image: url("../images/profile.jpg");
-    background-size: cover;         /* fills the screen */
-    background-position: center;    /* centers the image */
-    background-repeat: no-repeat;   /* avoids tiling */
+    background-size: cover;         
+    background-position: center;  
+    background-repeat: no-repeat;   
     box-sizing: border-box;
   }
   
