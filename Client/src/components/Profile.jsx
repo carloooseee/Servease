@@ -1,4 +1,7 @@
-import "../css/home.css";
+// import "../css/home.css";
+import "../css/profile.css"; 
+import picture from "../images/profile.jpg";
+import guy from "../images/guy.jpg";
 
 function Profile() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -8,10 +11,19 @@ function Profile() {
   }
 
   return (
-    <div className="profile-container">
-      <h1>Welcome, <strong>{user.first_name} {user.last_name}!</strong></h1>
-      <h1><strong>Email:</strong> {user.email}</h1>
-      <h1><strong>Phone Number:</strong> {user.phone_number}</h1>
+    <div className="profile-wrapper">
+      <div className="profile-info card shadow p-4 rounded text-center">
+        <img 
+          src={guy} 
+          alt="Profile" 
+          className="profile-pic mb-3 rounded-circle mx-auto d-block"
+        />
+        <h2 className="mb-3">
+          Welcome, <strong>{user.first_name} {user.last_name}</strong>
+        </h2>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Phone Number:</strong> {user.phone_number}</p>
+      </div>
     </div>
   );
 }
