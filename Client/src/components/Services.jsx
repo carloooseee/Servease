@@ -61,9 +61,6 @@ const Services = () => {
           <option value="plumbing">Plumbing</option>
           <option value="electrical repairs">Electrical Repairs</option>
         </select>
-      </div>
-
-      <div className="dropdown-container">
         <label htmlFor="services">Select a Service:</label>
         <select id="services" onChange={e => setSelectedServiceId(e.target.value)}>
           <option value="">Choose</option>
@@ -74,7 +71,6 @@ const Services = () => {
           ))}
         </select>
       </div>
-
       {selectedServiceId && (
         <div className="booking-container">
           <input type="datetime-local" onChange={e => setBookingDate(e.target.value)} />
