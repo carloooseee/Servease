@@ -1,0 +1,133 @@
+.aboutUs {
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.aboutUs1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    gap: 40px;
+    box-sizing: border-box;
+    background-image: url("../images/aboutUs1.png");
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+.aboutUs1-text {
+    flex: 1;
+    text-align: left;
+}
+
+.aboutUs1-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.aboutUs1-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.aboutUs1-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs1-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.aboutUs2 {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;      
+    justify-content: center; 
+    flex-direction: column;
+    padding-left: 8vw;        
+    background-color: #091e3f;   
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.aboutUs2 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.aboutUs2 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white
+}
+
+.aboutUs3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    gap: 40px;
+    background-image: url("../images/aboutUs3.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutUs3-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs3-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.aboutUs3-text {
+    flex: 1;
+    text-align: left;
+}
+
+.aboutUs3-text h2 {
+    text-align: right;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.aboutUs3-text p {
+    text-align: right;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+}
+
