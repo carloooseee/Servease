@@ -1,4 +1,4 @@
-/* Container for the entire services page */
+
 .services-container {
     padding: 20px;
     text-align: center;
@@ -7,15 +7,13 @@
     border-radius: 20px;
   }
   
-  /* Title of the section */
   .services-container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
     font-weight: 600;
   }
-  
-  /* The category filter section */
+
   .dropdown-container {
     margin: 20px auto;
     max-width: 500px;
@@ -44,12 +42,10 @@
     transition: border-color 0.3s ease;
   }
   
-  /* Hover effect for select dropdown */
   .dropdown-container select:hover {
     border-color: #888;
   }
   
-  /* Service dropdown container */
   .services-container select {
     width: 100%;
     padding: 12px;
@@ -76,7 +72,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Booking input and button */
   .booking-container input {
     width: 100%;
     padding: 12px;
@@ -99,12 +94,10 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Button hover effect */
   .booking-container button:hover {
     background-color: #45a049;
   }
-  
-  /* Responsiveness: Adjust for small screens */
+
   @media (max-width: 768px) {
     .services-container h2 {
       font-size: 1.8rem;
