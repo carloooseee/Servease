@@ -3,7 +3,7 @@ import "../css/profile.css";
 import picture from "../images/profile.jpg";
 import guy from "../images/guy.jpg";
 
-function Profile() {
+function EmployeeProfile() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   if (!user) {
@@ -29,4 +29,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default EmployeeProfile;

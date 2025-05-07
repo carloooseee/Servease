@@ -11,6 +11,7 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
+import EmployeeProfile from "./components/EmployeeProfile";
 import Map from "./components/Map";
 import Footer from "./components/Footer";
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/Register" element={<Register />} />
             <Route path="/Become" element={<Become />} />
             <Route path="/Profile" element={<Profile user={user} />} />
+            <Route path="/EmployeeProfile" element={<Profile user={user} />} />
             <Route path="/Map" element={<Map/>}/>
           </Routes>
         </div>
