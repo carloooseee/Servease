@@ -28,7 +28,7 @@ const Login = ({ setUser }) => {
 
         // Redirect based on role (optional)
         if (user.role === "employee") {
-          navigate("/employer-dashboard");
+          navigate("/EmployeeProfile");
         } else {
           navigate("/Profile");
         }
