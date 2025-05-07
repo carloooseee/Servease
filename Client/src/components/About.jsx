@@ -1,7 +1,7 @@
 import "../css/about.css"
 function About(){
     return(
-        <>
+    <>
             <div className="aboutUs">
                 <div className="aboutUs1">
                 <div className="aboutUs1-text">
@@ -36,12 +36,9 @@ function About(){
                         </p>
                     </div>
                 </div>
-
-
-
             </div>
-            
-        </>
+            </>
+
     );
 }
 export default About;

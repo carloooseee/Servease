@@ -1,27 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html, #root {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  .app-container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .box {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-  
+.test{
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 60px; */
+}
   

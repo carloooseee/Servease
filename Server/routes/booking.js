@@ -2,6 +2,7 @@ const express = require("express");
 const db = require("../db");
 const router = express.Router();
 
+//register ng mga bookings
 router.post("/", (req, res) => {
     const { user_email, service_id, booking_date } = req.body;
 
@@ -16,5 +17,30 @@ router.post("/", (req, res) => {
     });
 });
 
+// accept ns hits
+// Assuming this is inside your existing route to get bookings
+router.get("/bookings", (req, res) => {
+    const sql = "SELECT * FROM bookings WHERE status = 'pending'"; // Filter by 'pending' status
+    db.query(sql, (err, results) => {
+      if (err) return res.status(500).json({ error: err.message });
+      res.json(results); // Return only the 'pending' bookings
+    });
+  });
+  
+  
+router.post("/:id/update", (req, res) => {
+    const { status } = req.body;
+    const { id } = req.params;
+
+    if (!["taken", "disregarded"].includes(status)) {
+        return res.status(400).json({ error: "Invalid status" });
+    }
+
+    const sql = "UPDATE bookings SET status = ? WHERE id = ?";
+    db.query(sql, [status, id], (err, result) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json({ message: `Booking status updated to ${status}` });
+    });
+});
 
 module.exports = router;

@@ -14,19 +14,19 @@ const Login = ({ setUser }) => {
     try {
       const res = await loginUser({ email, password });
       console.log("Login response:", res); // Debug log
-
+  
       const user = res?.data?.user || res?.data?.userFound;
       const message = res?.data?.message;
-
+  
       if (user) {
-        // Store entire user object including role in localStorage
-        localStorage.setItem("user", JSON.stringify(user));
-        localStorage.setItem("role", user.role); // Optional: separate role key
-
-        setUser(user);
+        // Store entire user object in localStorage
+        localStorage.setItem("user", JSON.stringify(user)); // Save user data
+        localStorage.setItem("role", user.role); // Save role separately (optional)
+  
+        setUser(user); // Set user in state
         alert(message || "Login successful!");
-
-        // Redirect based on role (optional)
+  
+        // Redirect based on role
         if (user.role === "employee") {
           navigate("/EmployeeProfile");
         } else {
@@ -40,6 +40,7 @@ const Login = ({ setUser }) => {
       alert(error.response?.data?.message || "Login failed");
     }
   };
+  
 
   return (
     <div className="login">

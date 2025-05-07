@@ -1,34 +1,30 @@
 .aboutUs {
-    position: absolute;
-    top: 60px; 
-    left: 0;
-    width: 100%;
-    width: 100vw;
+    margin-top: 1150px; /* sadjust for your fixed header if needed */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.aboutUs1{
+    color: #000;
     width: 100%;
-    height: 100vh;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+  
+.aboutUs1 {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding: 5% 5%;
     gap: 40px;
-    box-sizing: border-box;
     background-image: url("../images/aboutUs1.png");
     background-position: center;
     background-size: cover;
-    /* background-attachment: fixed; */
+    box-sizing: border-box;
 }
+
 .aboutUs1-text {
     flex: 1;
     text-align: left;
@@ -37,13 +33,13 @@
 .aboutUs1-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #000000;
+    color: #000;
 }
 
 .aboutUs1-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #000000;
+    color: #000;
 }
 
 .aboutUs1-image {
@@ -59,18 +55,17 @@
     border-radius: 10px;
 }
 
+/* Section 2: Banner quote */
 .aboutUs2 {
     width: 100%;
-    height: 20vh;
+    padding: 4rem 2rem;
     display: flex;
-    align-items: center;      
-    justify-content: center; 
     flex-direction: column;
-    padding-left: 8vw;        
-    background-color: #091e3f;   
+    align-items: center;
+    justify-content: center;
+    background-color: #091e3f;
     color: #fff;
     text-align: center;
-    box-sizing: border-box;
 }
 
 .aboutUs2 h2 {
@@ -81,21 +76,23 @@
 .aboutUs2 p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: white
+    color: white;
 }
 
+/* Section 3: Vision */
 .aboutUs3 {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0 5vw;
-    box-sizing: border-box;
+    padding: 5%;
     gap: 40px;
     background-image: url("../images/aboutUs3.png");
     background-position: center;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 .aboutUs3-image {
@@ -109,25 +106,73 @@
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .aboutUs3-text {
     flex: 1;
-    text-align: left;
+    text-align: right;
 }
 
 .aboutUs3-text h2 {
-    text-align: right;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #222;
 }
 
 .aboutUs3-text p {
-    text-align: right;
     font-size: 1.15rem;
     line-height: 1.8;
     color: #444;
 }
 
+/* Responsive design */
+@media (max-width: 1024px) {
+    .aboutUs1,
+    .aboutUs3 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutUs1-text,
+    .aboutUs3-text {
+        text-align: center;
+    }
+
+    .aboutUs3-text {
+        text-align: center;
+    }
+
+    .aboutUs1-image,
+    .aboutUs3-image {
+        margin-top: 2rem;
+    }
+
+    .aboutUs2 h2 {
+        font-size: 2rem;
+    }
+
+    .aboutUs2 p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .aboutUs1-text h2,
+    .aboutUs3-text h2,
+    .aboutUs2 h2 {
+        font-size: 1.8rem;
+    }
+
+    .aboutUs1-text p,
+    .aboutUs3-text p,
+    .aboutUs2 p {
+        font-size: 1rem;
+    }
+
+    .aboutUs1,
+    .aboutUs3 {
+        gap: 20px;
+        padding: 2rem 1rem;
+    }
+}

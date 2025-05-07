@@ -48,6 +48,7 @@ const Services = () => {
   };
 
   return (
+    <div className="service">
     <div className="services-container">
       <h2>Book a Service</h2>
 
@@ -73,10 +74,12 @@ const Services = () => {
       </div>
       {selectedServiceId && (
         <div className="booking-container">
+          <label htmlFor="Date">Select a Date:</label>
           <input type="datetime-local" onChange={e => setBookingDate(e.target.value)} />
           <button onClick={handleBooking}>Book Now</button>
         </div>
       )}
+    </div>
     </div>
   );
 };

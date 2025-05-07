@@ -30,13 +30,13 @@ function App() {
             <Route path="/Register" element={<Register />} />
             <Route path="/Become" element={<Become />} />
             <Route path="/Profile" element={<Profile user={user} />} />
-            <Route path="/EmployeeProfile" element={<Profile user={user} />} />
+            <Route path="/EmployeeProfile" element={<EmployeeProfile user={user} />} />
             <Route path="/Map" element={<Map/>}/>
           </Routes>
         </div>
         
       </div>
-      {/* <Footer/> */}
+      <Footer/>
       
     </Router>
   );

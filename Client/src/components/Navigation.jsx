@@ -83,7 +83,12 @@ function Navigation({ user: propUser }) {
                     />
                   </div>
                   <ul className="dropdown-menu dropdown-menu-end">
-                    <li><Link className="dropdown-item" to="/Profile">Profile</Link></li>
+                  <li>
+                      <Link className="dropdown-item" to={user.role === "employee" ? "/EmployeeProfile" : "/Profile"}>
+                        Profile
+                      </Link>
+                    </li>
+
                     <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
                   </ul>
                 </>
