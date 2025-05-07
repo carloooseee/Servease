@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 import { Link } from "react-router-dom";
 import "../css/forms.css";
+import "../css/style.css";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -43,6 +44,7 @@ const Login = ({ setUser }) => {
   
 
   return (
+    <div className="formsContainer">
     <div className="login">
       <h2>Servease</h2>
       <form onSubmit={handleLogin}>
@@ -65,6 +67,7 @@ const Login = ({ setUser }) => {
           Don't have an account? <Link to="/Register">Register</Link>
         </p>
       </form>
+    </div>
     </div>
   );
 };

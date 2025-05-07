@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { registerUser } from "../api";
 import { Link } from "react-router-dom";
 import "../css/forms.css";
+import "../css/style.css";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -29,6 +30,7 @@ const Register = () => {
   };
 
   return (
+    <div className="formsContainer">
     <div className="register">
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
@@ -44,6 +46,7 @@ const Register = () => {
         <input type="submit" value="Register" />
         <p>Already have an account? <Link to="/login">Login</Link></p>
       </form>
+    </div>
     </div>
   );
 };
