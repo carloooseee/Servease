@@ -44,13 +44,14 @@ form{
 p {
     color: black
 }
-form input{
+form input, form select{
     margin-bottom: 10px;
 }
 .register input[type="text"],
 .register input[type="email"],
 .register input[type="number"],
-.register input[type="password"] {
+.register input[type="password"],
+.register select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

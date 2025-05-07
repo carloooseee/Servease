@@ -23,6 +23,7 @@ function Profile() {
         </h2>
         <p><strong>Email:</strong> {user.email}</p>
         <p><strong>Phone Number:</strong> {user.phone_number}</p>
+        <p><strong>Role:</strong> {user.role}</p>
       </div>
     </div>
   );

@@ -7,22 +7,24 @@ const router = express.Router();
 // Register User
 router.post("/register", async (req, res) => {
   console.log("Received data:", req.body); // Debug log
-  const { firstName, lastName, email, phone, password } = req.body;
-  if (!firstName || !lastName || !email || !phone || !password) {
-      return res.status(400).json({ message: "All fields are required." });
-  }
-  try {
-      
-      const sql = "INSERT INTO users (first_name, last_name, email, phone_number, password) VALUES (?, ?, ?, ?, ?)";
 
-      db.query(sql, [firstName, lastName, email, phone, password], (err, result) => {
-          if (err) {
-              return res.status(500).json({ message: "Database error", error: err.message });
-          }
-          res.json({ message: "Registration successful! ✅" });
-      });
+  const { firstName, lastName, email, phone, password, role } = req.body;
+
+  if (!firstName || !lastName || !email || !phone || !password || !role) {
+    return res.status(400).json({ message: "All fields are required, including role." });
+  }
+
+  try {
+    const sql = "INSERT INTO users (first_name, last_name, email, phone_number, password, role) VALUES (?, ?, ?, ?, ?, ?)";
+
+    db.query(sql, [firstName, lastName, email, phone, password, role], (err, result) => {
+      if (err) {
+        return res.status(500).json({ message: "Database error", error: err.message });
+      }
+      res.json({ message: "Registration successful! ✅" });
+    });
   } catch (error) {
-      res.status(500).json({ message: "Server error", error: error.message });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 });
 
@@ -57,7 +59,8 @@ router.post("/login", async (req, res) => {
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
-        phone_number: user.phone_number
+        phone_number: user.phone_number,
+        role: user.role
       }
     });
   } catch (error) {
