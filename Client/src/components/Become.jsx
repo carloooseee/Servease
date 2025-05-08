@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/register.css"
+import "../css/become.css"
 function Become() {
   return (
-    <h1>Become a Helper</h1>
+    <div className="NIGGA">
+      <div className="NIGGA1"></div>
+      <div className="NIGGA2"></div>
+      <div className="NIGGA1"></div>
+      <div className="NIGGA2"></div>
+      <div className="NIGGA1"></div>
+      <div className="NIGGA2"></div>
+    </div>
   );
 }
 

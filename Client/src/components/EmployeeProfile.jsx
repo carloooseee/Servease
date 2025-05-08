@@ -35,7 +35,8 @@ function EmployeeProfile() {
   if (!user) return <h1>bruh u aint exist</h1>;
 
   return (
-    <div className="profile-info card shadow p-4 rounded text-center">
+    <div className="profile-wrapper">
+<div className="profile-info card shadow p-4 rounded text-center">
       {/* Profile Info */}
       <img src={guy} alt="Profile" className="profile-pic mb-3 rounded-circle mx-auto d-block" />
       <h2 className="mb-3">
@@ -71,6 +72,8 @@ function EmployeeProfile() {
         </div>
       )}
     </div>
+    </div>
+    
   );
 }
 

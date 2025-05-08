@@ -1,13 +1,38 @@
+/* Basic reset for body and html */
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+/* Full height container for the whole app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+}
+
+/* Navbar styles */
+nav.navbar {
+  z-index: 1000;
+  position: fixed; /* Fixed navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* Navbar height */
+  background-color: white;
   width: 100%;
-  overflow-x: hidden; 
 }
 
 .box {
+  flex-grow: 1;
+  padding-top: 80px;
+  height: 100%;
+  overflow-y: auto; 
+}
 
-  display: flex;
-  justify-content: center;
-  align-self: center;
+/* Footer styles */
+footer {
+  margin: 0;
+  padding: 0;
 }

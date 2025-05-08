@@ -1,6 +1,301 @@
-.test{
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Cover Page */
+.cover-page {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+              url('../images/home_cleaning.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 350vh; */
+}
+
+.cover-overlay {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+}
+
+.cover-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.cover-description {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+
+.cover-buttons {
+  margin-top: 2rem;
+}
+
+.cover-btn {
+  margin: 0 1rem;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #2D9CDB;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1b7bb4;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #2D9CDB;
+  border: 2px solid #2D9CDB;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f0f0;
+}
+
+/* Services Page */
+.services-page {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.services-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
+
+.service-card.animate-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-item {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.service-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.service-item h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.services-book-btn-container {
+  margin-top: 2rem;
+}
+
+/* Reviews Section */
+.reviews-page {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  background: #f0f4f8;
+  gap: 2rem;
+}
+
+.reviews-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.reviews-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.reviews-right {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-box {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 300px;
+}
+
+/* Helpers Section */
+.helpers-page {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.helpers-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 2rem;
+}
+
+.carousel-description {
+  font-size: 1rem;
+  max-width: 400px;
+  color: #444;
+}
+
+.carousel-btn {
+  background: none;
+  font-size: 2rem;
+  color: #2D9CDB;
+  border: none;
+  cursor: pointer;
+}
+
+.helpers-carousel-indicator {
+  width: 14px;
+  height: 14px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.helpers-carousel-indicator.active {
+  background-color: #2D9CDB;
+}
+
+/* Choose Us Section */
+.choose-us-page {
+  background: #f5f7fa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.choose-us-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.choose-us-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose-us-image-container img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.choose-us-contacts {
   display: flex;
   flex-direction: column;
-  /* margin-top: 60px; */
+  gap: 1.5rem;
+  text-align: left;
 }
-  
+
+.contact-section h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #2D9CDB;
+}
+
+.contact-section p {
+  margin: 0;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cover-title {
+    font-size: 2.5rem;
+  }
+  .services-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-image {
+    width: 90%;
+    margin: 0 auto 1rem;
+  }
+  .carousel-description {
+    text-align: center;
+  }
+  .choose-us-content {
+    flex-direction: column;
+  }
+}
