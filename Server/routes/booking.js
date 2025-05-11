@@ -16,31 +16,17 @@ router.post("/", (req, res) => {
         res.json({ message: "Booking successful", booking_id: result.insertId });
     });
 });
-
-// accept ns hits
-// Assuming this is inside your existing route to get bookings
-router.get("/bookings", (req, res) => {
-    const sql = "SELECT * FROM bookings WHERE status = 'pending'"; // Filter by 'pending' status
-    db.query(sql, (err, results) => {
-      if (err) return res.status(500).json({ error: err.message });
-      res.json(results); // Return only the 'pending' bookings
-    });
-  });
-  
-  
-router.post("/:id/update", (req, res) => {
-    const { status } = req.body;
-    const { id } = req.params;
-
-    if (!["taken", "disregarded"].includes(status)) {
-        return res.status(400).json({ error: "Invalid status" });
+// ✅ GET: Fetch only pending bookings (for promise client)
+router.get("/", async (req, res) => {
+    try {
+        const sql = "SELECT id, service_id, user_email, booking_date, status FROM bookings WHERE status = 'pending'";
+        const [results] = await db.query(sql);
+        res.status(200).json({ bookings: results });
+    } catch (err) {
+        console.error("Error fetching pending bookings:", err);
+        res.status(500).json({ error: "Database error" });
     }
-
-    const sql = "UPDATE bookings SET status = ? WHERE id = ?";
-    db.query(sql, [status, id], (err, result) => {
-        if (err) return res.status(500).json({ error: err.message });
-        res.json({ message: `Booking status updated to ${status}` });
-    });
 });
+
 
 module.exports = router;

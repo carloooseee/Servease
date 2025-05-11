@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 import { Link } from "react-router-dom";
+import "../css/login.css";
 import "../css/forms.css";
 import "../css/style.css";
 

@@ -1,5 +1,5 @@
 require("dotenv").config();
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise"); // ✅ Import promise-based API directly
 
 // Create connection pool
 const pool = mysql.createPool({
@@ -12,13 +12,15 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error("Database connection failed:", err.message);
-  } else {
+(async () => {
+  try {
+    const connection = await pool.getConnection();
     console.log("Connected to MySQL Database ✅");
     connection.release();
+  } catch (err) {
+    console.error("Database connection failed:", err.message);
   }
-});
+})();
 
-module.exports = pool.promise(); // Use promise-based queries
+module.exports = pool;
+

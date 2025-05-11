@@ -1,0 +1,108 @@
+/* *{
+    border: 1px solid;
+} */
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: aliceblue;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: row; /* Make the profile info and bookings section side by side */
+    justify-content: space-between;
+    width: 100%;
+    width: fit-content;
+    max-width: 1200px;
+    background-color: white ;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .profile-info {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-info p {
+    margin: 5px 0;
+  }
+  
+  .profile-pic {
+    max-width: 120px;
+    width: 100%;
+  }
+  
+  .bookings-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  
+  .scrollable-bookings {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .pending-bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pending-bookings-table th,
+  .pending-bookings-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Optional: Customizing the scrollbar */
+  .scrollable-bookings::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-bookings::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  .scrollable-bookings::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .profile-content {
+      flex-direction: column; /* Stack vertically on smaller screens */
+    }
+  
+    .profile-info {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .bookings-section {
+      margin-top: 20px;
+    }
+  
+    .pending-bookings-table {
+      font-size: 14px;
+    }
+  }
+  

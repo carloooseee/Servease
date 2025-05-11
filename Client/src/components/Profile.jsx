@@ -1,6 +1,5 @@
 // import "../css/home.css";
 import "../css/profile.css"; 
-import picture from "../images/profile.jpg";
 import guy from "../images/guy.jpg";
 
 function Profile() {
@@ -12,7 +11,7 @@ function Profile() {
 
   return (
     <div className="profile-wrapper">
-      <div className="profile-info card shadow p-4 rounded text-center">
+      <div className="profile-info card shadow p-4 rounded">
         <img 
           src={guy} 
           alt="Profile" 

@@ -1,80 +1,88 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../css/home.css";
-import "../css/profile.css";
+import "../css/employee.css"; 
 import guy from "../images/guy.jpg";
 
-function EmployeeProfile() {
+const EmployeeProfile = () => {
+  const [pendingBookings, setPendingBookings] = useState([]);
+  const [error, setError] = useState(null);
   const user = JSON.parse(localStorage.getItem("user"));
-  const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    const fetchBookings = async () => {
+    const fetchPendingBookings = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/bookings/pending");
-        setBookings(res.data);
+        const response = await axios.get("http://localhost:3000/api/bookings");
+        if (Array.isArray(response.data)) {
+          const filtered = response.data.filter(b => b.status === "pending");
+          setPendingBookings(filtered);
+        } else if (Array.isArray(response.data.bookings)) {
+          const filtered = response.data.bookings.filter(b => b.status === "pending");
+          setPendingBookings(filtered);
+        } else {
+          setError("Unexpected data format.");
+        }
       } catch (err) {
-        console.error("Error fetching pending bookings:", err);
+        console.error("Error fetching bookings:", err);
+        setError("Failed to load bookings.");
       }
     };
 
     if (user?.role === "employee") {
-      fetchBookings(); // Fetch bookings if the user is an employee
+      fetchPendingBookings();
     }
   }, [user]);
 
-  const handleAction = async (bookingId, action) => {
-    try {
-      await axios.post(`http://localhost:3001/bookings/${bookingId}/update`, { status: action });
-      setBookings((prev) => prev.filter((b) => b.id !== bookingId)); // Remove updated booking from list
-    } catch (err) {
-      console.error("Failed to update booking:", err);
-    }
-  };
-
-  if (!user) return <h1>bruh u aint exist</h1>;
-
   return (
     <div className="profile-wrapper">
-<div className="profile-info card shadow p-4 rounded text-center">
-      {/* Profile Info */}
-      <img src={guy} alt="Profile" className="profile-pic mb-3 rounded-circle mx-auto d-block" />
-      <h2 className="mb-3">
-        Welcome, <strong>{user.first_name} {user.last_name}</strong>
-      </h2>
-      <p><strong>Email:</strong> {user.email}</p>
-      <p><strong>Phone Number:</strong> {user.phone_number}</p>
-      <p><strong>Role:</strong> {user.role}</p>
+      <div className="profile-content">
+        <div className="profile-info">
+          <h2>Employee Profile</h2>
+          <img 
+            src={guy} 
+            alt="Profile" 
+            className="profile-pic mb-3 rounded-circle mx-auto d-block"
+          />
+          <div className="profile-container">
+            <p><strong>Name:</strong> {user.first_name} {user.last_name}</p>
+            <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>Phone Number:</strong> {user.phone_number}</p>
+            <p><strong>Role:</strong> {user.role}</p>
+          </div>
+        </div>
 
-      {/* Pending Bookings Inside the Profile Wrapper */}
-      {user.role === "employee" && (
-        <div className="bookings-list mt-4 p-3">
-          <h3 className="mb-3">Pending Bookings</h3>
-          {bookings.length === 0 ? (
-            <p>No pending bookings 💤</p>
+        <div className="bookings-section">
+          <h3>Pending Bookings</h3>
+          {error && <p className="error">{error}</p>}
+          {pendingBookings.length === 0 ? (
+            <p>No pending bookings found.</p>
           ) : (
-            <ul className="list-group">
-              {bookings.map((booking) => (
-                <li key={booking.id} className="list-group-item d-flex justify-content-between align-items-center">
-                  <span>
-                    <strong>Service ID:</strong> {booking.service_id} <br />
-                    <strong>User Email:</strong> {booking.user_email} <br />
-                    <strong>Date:</strong> {booking.booking_date}
-                  </span>
-                  <div>
-                    <button className="btn btn-success btn-sm me-2" onClick={() => handleAction(booking.id, "taken")}>✅ Accept</button>
-                    <button className="btn btn-danger btn-sm" onClick={() => handleAction(booking.id, "disregarded")}>❌ Reject</button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="scrollable-bookings">
+              <table className="pending-bookings-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Service ID</th>
+                    <th>User Email</th>
+                    <th>Booking Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pendingBookings.map((booking) => (
+                    <tr key={booking.id}>
+                      <td>{booking.id}</td>
+                      <td>{booking.service_id}</td>
+                      <td>{booking.user_email}</td>
+                      <td>{booking.booking_date}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
-      )}
+      </div>
     </div>
-    </div>
-    
   );
-}
+};
 
 export default EmployeeProfile;

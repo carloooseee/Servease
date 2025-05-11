@@ -4,6 +4,7 @@ import { registerUser } from "../api";
 import { Link } from "react-router-dom";
 import "../css/forms.css";
 import "../css/style.css";
+import "../css/register.css";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
