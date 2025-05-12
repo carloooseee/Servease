@@ -22,6 +22,7 @@ const helpers = [
     title: 'House Repairs',
     description: 'Reliable repair services for plumbing, electrical, and general household fixes.',
   },
+  
 ];
 
 const Home = () => {
@@ -36,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % helpers.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -96,29 +97,13 @@ const Home = () => {
           <h1 className="cover-title">SERVEASE</h1>
 
           <p className="cover-description">
-            ServEase is your all-in-one platform for finding trusted at-home
-          </p>
-          <p className="cover-description">
-            service providers in the Philippines. Whether you need urgent cleaning,
-          </p>
-          <p className="cover-description">
-            car detailing, pet grooming, or other household services,
-          </p>
-          <p className="cover-description">
-            ServEase connects you with skilled professionals at your convenience.
-          </p>
-          <p className="cover-description">
-            Designed for busy individuals, ServEase offers flexible scheduling,
-          </p>
-          <p className='cover-description'>
-            transparent pricing, and a secure booking process
-          </p>
-          <p className='cover-description'>
-            making home service hassle-free, fast, and reliable.
+          ServEase is the ultimate platform for connecting you with reliable, professional home service providers—right when you need them. Whether it's a last-minute cleaning, expert car detailing, pet grooming, or a range of other household tasks, ServEase makes it easy to get the job done without the stress.
+
+Created with busy individuals in mind, ServEase offers flexible scheduling, transparent pricing, and a secure, user-friendly booking process. Say goodbye to the hassle of searching for trustworthy help—ServEase puts convenience, quality, and reliability at your fingertips.
           </p>
           <div className="cover-buttons">
-            <button className="btn btn-primary cover-btn" onClick={() => navigate('/services')}>Book Now</button>
-            <button className="btn btn-secondary cover-btn" onClick={() => navigate('/become')}>Be a Helper</button>
+            <button className="btn button1" onClick={() => navigate('/services')}>Book Now</button>
+            <button className="btn button2" onClick={() => navigate('/become')}>Be a Helper</button>
           </div>
         </div>
       </section>
@@ -174,67 +159,52 @@ const Home = () => {
       </section>
 
       {/* Fourth section: What our helpers say */}
-      <section className="helpers-page">
-        <h3 className="helpers-title">What our helpers say...</h3>
-        <div className="helpers-carousel-container" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <button
-              className="carousel-btn left"
-              aria-label="Previous helper"
-              onClick={() => setCurrentSlide((currentSlide - 1 + helpers.length) % helpers.length)}
-              style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)' }}
-            >
-              {'<'}
-            </button>
-            <div className="helpers-carousel" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div
-                className="carousel-content"
-                style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', transition: 'transform 0.5s ease-in-out' }}
-              >
-                <img src={helpers[currentSlide].image} alt={`Helper ${currentSlide + 1}`} className="carousel-image" />
-                <div className="carousel-description" style={{ flex: 1, overflowY: 'auto', height: '550px', position: 'relative', display: 'flex', alignItems: 'center' }}>
-                  <p>{helpers[currentSlide].description}</p>
-                </div>
-              </div>
-            </div>
-            <button
-              className="carousel-btn right"
-              aria-label="Next helper"
-              onClick={() => setCurrentSlide((currentSlide + 1) % helpers.length)}
-              style={{ position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)' }}
-            >
-              {'>'}
-            </button>
-          </div>
-          <div className="helpers-carousel-indicators" role="tablist" aria-label="Helper testimonials" style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', gap: '15px' }}>
-            {helpers.map((_, index) => (
-              <div
-                key={index}
-                role="tab"
-                tabIndex={0}
-                aria-selected={index === currentSlide}
-                aria-controls={`helper-panel-${index}`}
-                id={`helper-tab-${index}`}
-                className={`helpers-carousel-indicator ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => handleIndicatorClick(index)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    handleIndicatorClick(index);
-                  }
-                }}
-              />
-            ))}
-          </div>
-          <button className="btn btn-primary" style={{ marginTop: '20px', alignSelf: 'center' }}>Be a Helper</button>
-        </div>
-      </section>
+      <div id="carouselExampleCaptions" className="carousel slide custom-carousel" data-bs-ride="carousel"> 
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item">
+      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item">
+      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+
 
       {/* Fifth section: Why choose us */}
       <section className="choose-us-page">
         <h2 className="choose-us-title">Why choose us</h2>
         <div className="choose-us-content">
           <div className="choose-us-image-container">
-            <img src="https://via.placeholder.com/400x300" alt="Why choose us" className="choose-us-image" />
+            <img src="https://th.bing.com/th/id/OIP.62MKXOoBgflUJdeB07JeLgHaE8?cb=iwc2&rs=1&pid=ImgDetMain" alt="Why choose us" className="choose-us-image" />
           </div>
           <div className="choose-us-contacts">
             <div className="contact-section">

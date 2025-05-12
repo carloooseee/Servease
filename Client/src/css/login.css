@@ -6,21 +6,6 @@
     font-family: Arial, sans-serif;
 }
 /* Remove default button styles */
-button {
-    all: unset; /* Resets all default styles */
-    cursor: pointer;
-    color: #3498db;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-  }
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
 .login {
     background: white;
     padding: 30px;

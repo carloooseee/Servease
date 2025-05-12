@@ -6,25 +6,6 @@
     font-family: Arial, sans-serif;
 
 }
-.page{
-    display: flex;
-    width: 1000px;
-}
-button {
-    all: unset; 
-    cursor: pointer;
-    color: #3498db;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-  }
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
 .register {
     background: white;
     padding: 30px;

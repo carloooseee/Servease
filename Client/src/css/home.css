@@ -2,14 +2,17 @@
 
 .home-container {
   font-family: 'Segoe UI', sans-serif;
-  color: #333;
+  color: #ffffff;
   padding: 0;
   margin: 0;
 }
 
 /* --- COVER PAGE --- */
 .cover-page {
-  background-color: #007bff;
+  background-image: url('../images/home.png');
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
   height: 100vh;
   position: relative;
   display: flex;
@@ -18,12 +21,15 @@
 }
 
 .cover-overlay {
-  /* background-color: rgba(0, 0, 0, 0.6); */
   color: white;
   text-align: center;
-  padding: 40px;
+  padding: 10px;
   border-radius: 12px;
   max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cover-title {
@@ -34,9 +40,11 @@
 }
 
 .cover-description {
+  width: 50%;
   font-size: 1.1rem;
   margin: 5px 0;
   line-height: 1.5;
+  color: white;;
 }
 
 .cover-buttons {
@@ -50,23 +58,45 @@
   transition: background 0.3s ease;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-}
 
-.btn-secondary {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-}
+  /* background-color: #091e3f; */
 
-.btn-primary:hover,
-.btn-secondary:hover {
-  opacity: 0.9;
+/* Shared button base style */
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  min-width: 140px;
+  background-color: #091e3f; 
+  margin: 10px;
 }
+
+.button1 {
+  background-color: #091e3f !important; 
+  color: white !important;
+}
+
+.button1:hover {
+  background-color: #ffffff !important;
+  color: #091e3f !important;
+}
+
+.button2 {
+  background-color: #f8f9fa !important; 
+  color: #343a40;
+}
+
+.button2:hover {
+  background-color: #091e3f !important; 
+  color: white !important;
+}
+
 
 /* --- SERVICES SECTION --- */
 .services-page {
@@ -138,12 +168,18 @@
   background-color: #fff;
   padding: 60px 20px;
   display: flex;
-  flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
 }
-
-.reviews-left, .reviews-right {
+.reviews-left, .reviews-right{
+  width: 50%;
+}
+.reviews-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.reviews-right {
   flex: 1 1 300px;
 }
 
@@ -166,57 +202,38 @@
 }
 
 /* --- HELPERS SECTION --- */
-.helpers-page {
-  background-color: #eef5ff;
-  padding: 60px 20px;
-  text-align: center;
+.custom-carousel {
+  height: 70vh;
+  overflow: hidden;
 }
 
-.helpers-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
+.carousel-inner {
+  height: 100%;
 }
 
-.carousel-btn {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #007bff;
+.carousel-item {
+  height: 100%;
 }
 
 .carousel-image {
-  width: 300px;
-  height: 250px;
-  border-radius: 12px;
+  height: 100%;
   object-fit: cover;
-  margin-right: 20px;
 }
 
-.carousel-description {
-  text-align: left;
-  font-size: 1rem;
-  color: #333;
-}
 
-.helpers-carousel-indicator {
-  width: 12px;
-  height: 12px;
-  background: #ccc;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.helpers-carousel-indicator.active {
-  background: #007bff;
-}
 
 /* --- CHOOSE US SECTION --- */
 .choose-us-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 60px 20px;
   background-color: #fdfdfd;
 }
-
+.choose-us-page div{
+  max-width: 1000px;;
+}
 .choose-us-title {
   text-align: center;
   font-size: 2.5rem;
