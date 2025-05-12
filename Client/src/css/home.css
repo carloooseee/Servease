@@ -1,91 +1,87 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* home.css */
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
   color: #333;
+  padding: 0;
+  margin: 0;
 }
 
-/* Cover Page */
+/* --- COVER PAGE --- */
 .cover-page {
+  background-color: #007bff;
   height: 100vh;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
-              url('../images/home_cleaning.jpg') center/cover no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-top: 350vh; */
 }
 
 .cover-overlay {
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  color: white;
   text-align: center;
-  color: #fff;
-  padding: 2rem;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 90%;
 }
 
 .cover-title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
 }
 
 .cover-description {
-  font-size: 1rem;
-  margin: 0.4rem 0;
+  font-size: 1.1rem;
+  margin: 5px 0;
+  line-height: 1.5;
 }
 
 .cover-buttons {
-  margin-top: 2rem;
+  margin-top: 30px;
 }
 
 .cover-btn {
-  margin: 0 1rem;
-  padding: 0.8rem 2rem;
-  font-weight: 600;
-}
-
-/* Buttons */
-.btn {
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  margin: 0 10px;
+  padding: 12px 24px;
+  font-weight: bold;
   transition: background 0.3s ease;
 }
 
 .btn-primary {
-  background-color: #2D9CDB;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #1b7bb4;
+  background-color: #007bff;
+  color: white;
+  border: none;
 }
 
 .btn-secondary {
-  background-color: #fff;
-  color: #2D9CDB;
-  border: 2px solid #2D9CDB;
+  background-color: #6c757d;
+  color: white;
+  border: none;
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
-  background-color: #f0f0f0;
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-/* Services Page */
+/* --- SERVICES SECTION --- */
 .services-page {
-  padding: 4rem 2rem;
+  padding: 60px 20px;
+  background-color: #ffffff;
   text-align: center;
+  height: max-content;
 }
 
 .services-title {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 40px;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
 }
 
 .services-title.animate {
@@ -97,205 +93,202 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 30px;
 }
 
 .service-card {
-  width: 280px;
+  background: white;
   border-radius: 10px;
-  overflow: hidden;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-in-out;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
 }
 
 .service-card.animate-card {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.service-item {
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 1rem;
+  transform: scale(1);
 }
 
 .service-item img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .service-item h3 {
-  margin-top: 1rem;
+  margin: 15px 0 10px;
   font-size: 1.3rem;
 }
 
 .service-description {
   font-size: 0.95rem;
-  color: #666;
+  color: #555;
 }
 
 .services-book-btn-container {
-  margin-top: 2rem;
+  margin-top: 30px;
 }
 
-/* Reviews Section */
+/* --- REVIEWS SECTION --- */
 .reviews-page {
+  background-color: #fff;
+  padding: 60px 20px;
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem 2rem;
-  background: #f0f4f8;
-  gap: 2rem;
+  gap: 40px;
+  justify-content: center;
 }
 
-.reviews-left {
-  flex: 1;
-  min-width: 300px;
+.reviews-left, .reviews-right {
+  flex: 1 1 300px;
 }
 
 .reviews-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .reviews-description {
   font-size: 1rem;
-  color: #555;
-}
-
-.reviews-right {
-  flex: 1;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  color: #666;
 }
 
 .review-box {
-  background: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  max-width: 300px;
+  background: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff;
+  font-style: italic;
 }
 
-/* Helpers Section */
+/* --- HELPERS SECTION --- */
 .helpers-page {
-  padding: 4rem 2rem;
-  background-color: #fff;
+  background-color: #eef5ff;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .helpers-title {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+}
+
+.carousel-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
 }
 
 .carousel-image {
   width: 300px;
-  height: 200px;
-  object-fit: cover;
+  height: 250px;
   border-radius: 12px;
-  margin-right: 2rem;
+  object-fit: cover;
+  margin-right: 20px;
 }
 
 .carousel-description {
+  text-align: left;
   font-size: 1rem;
-  max-width: 400px;
-  color: #444;
-}
-
-.carousel-btn {
-  background: none;
-  font-size: 2rem;
-  color: #2D9CDB;
-  border: none;
-  cursor: pointer;
+  color: #333;
 }
 
 .helpers-carousel-indicator {
-  width: 14px;
-  height: 14px;
-  background-color: #ccc;
+  width: 12px;
+  height: 12px;
+  background: #ccc;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .helpers-carousel-indicator.active {
-  background-color: #2D9CDB;
+  background: #007bff;
 }
 
-/* Choose Us Section */
+/* --- CHOOSE US SECTION --- */
 .choose-us-page {
-  background: #f5f7fa;
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 60px 20px;
+  background-color: #fdfdfd;
 }
 
 .choose-us-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
 }
 
 .choose-us-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 30px;
   justify-content: center;
   align-items: center;
 }
 
-.choose-us-image-container img {
-  width: 400px;
-  height: auto;
+.choose-us-image-container {
+  flex: 1 1 300px;
+}
+
+.choose-us-image {
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
 }
 
 .choose-us-contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: left;
+  flex: 1 1 300px;
 }
 
-.contact-section h3 {
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  margin-bottom: 0.4rem;
+.contact-section {
+  margin-bottom: 20px;
 }
 
 .contact-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  color: #2D9CDB;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-.contact-section p {
-  margin: 0;
-  color: #555;
+/* --- Animations --- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .cover-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
-  .services-images {
-    flex-direction: column;
-    align-items: center;
+
+  .cover-description {
+    font-size: 1rem;
   }
-  .carousel-image {
+
+  .service-card {
     width: 90%;
-    margin: 0 auto 1rem;
   }
-  .carousel-description {
-    text-align: center;
+
+  .carousel-image {
+    width: 80%;
+    height: auto;
   }
+
   .choose-us-content {
     flex-direction: column;
+    align-items: center;
   }
 }

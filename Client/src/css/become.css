@@ -1,6 +1,6 @@
 .NIGGA{
-    height: max-content;
-    width: 100%;
+    position: absolute;
+    height: fit-content;
 }
 .NIGGA1{
     height: 100vh;

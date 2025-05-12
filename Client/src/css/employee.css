@@ -2,6 +2,7 @@
     border: 1px solid;
 } */
 .profile-wrapper {
+
     display: flex;
     flex-direction: column;
     align-items: center;

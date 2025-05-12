@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getServices } from "../api";
 import "../css/services.css";
+import Footer from './Footer.jsx'
 
 const Services = () => {
   const [services, setServices] = useState([]);

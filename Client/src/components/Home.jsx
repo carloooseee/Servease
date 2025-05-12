@@ -4,6 +4,7 @@ import '../css/home.css';
 import homeCleaningImage from '../images/home_cleaning.jpg';
 import carCleaningImage from '../images/car_cleaning.jpg';
 import houseRepairsImage from '../images/house_repairs.jpg';
+import Footer from './Footer.jsx';
 
 const helpers = [
   {
@@ -266,6 +267,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 };

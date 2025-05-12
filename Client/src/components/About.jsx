@@ -1,4 +1,5 @@
 import "../css/about.css"
+import Footer from './Footer.jsx';
 function About(){
     return(
     <>
@@ -36,6 +37,7 @@ function About(){
                         </p>
                     </div>
                 </div>
+                <Footer/>
             </div>
             </>
 
