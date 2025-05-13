@@ -11,12 +11,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@react-google-maps/api": "^2.20.6",
     "axios": "^1.8.1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

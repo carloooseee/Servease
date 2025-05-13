@@ -27,7 +27,7 @@ function Navigation({ user: propUser }) {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-      <div className="container-fluid">
+      <div className="container-fluid position-relative">
         <img src={Logo} alt="Servease Logo" width="100" />
         <button
           className="navbar-toggler"

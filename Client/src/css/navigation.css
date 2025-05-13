@@ -1,45 +1,44 @@
 .navbar-collapse {
-    background-color: rgb(255, 255, 255); 
-    padding: 5px;
-    border-radius: 5px;
-    right: 0;
-  }
-  /* app.css */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  z-index: 1000;
-  background-color: white; /* Optional */
+  background-color: rgb(255, 255, 255) !important; 
+  padding: 5px;
+  border-radius: 5px;
+  right: 0;
 }
 
-  .navbar-nav {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-  }
-  
-  @media (max-width: 991px) { 
-    .navbar-collapse {
-      position: absolute;
-      top: 56px; 
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-    }
-    .navbar-nav {
-        flex-direction: column;
-        align-items: flex-start; /* Aligns links to the right */
-        text-align: right; /* Makes text align properly */
-    }
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+.navbar-collapse.show,
+.navbar-nav {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important;
+}
 
-    .navbar-nav .nav-link {
-        width: 100%;
-        padding-right: 15px; /* Adds some spacing to the right */
-    }
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    display: block !important; /* override Bootstrap glitch */
+    background-color: white;
+    z-index: 1050; /* higher than base elements */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
-  
+
+  .navbar-collapse.collapse:not(.show) {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+  }
+}

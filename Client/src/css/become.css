@@ -1,14 +1,215 @@
-.NIGGA{
+
+.beHelp {
     position: absolute;
-    height: fit-content;
-}
-.NIGGA1{
-    height: 100vh;
+    top: 60px; 
+    left: 0;
+    width: 100%;
     width: 100vw;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.NIGGA2{
+
+.beHelp1{
+    width: 100%;
     height: 100vh;
-    width: 100vw;
-    background-color: rgb(19, 100, 73);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    gap: 40px;
+    box-sizing: border-box;
+    background-image: url("../images/beHelpBG.png");
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+
+}
+.beHelp1-text {
+    flex: 1;
+    text-align: left;
+}
+
+.beHelp1-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.beHelp1-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000;
+}
+
+.beHelp1-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beHelp1-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.beHelp2 {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;      
+    justify-content: center; 
+    flex-direction: column;
+    padding-left: 8vw;        
+    background-color: #091e3f;   
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.beHelp2 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.beHelp2 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white
+}
+
+.beHelp3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    gap: 40px;
+    background-image: url("../images/aboutUs3.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.beHelp3-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beHelp3-image img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.beHelp3-text {
+    flex: 1;
+    text-align: left;
+}
+
+.beHelp3-text h2 {
+    text-align: right;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.beHelp3-text p {
+    text-align: right;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+  .beHelp1 {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    gap: 20px;
+  }
+
+  .beHelp1-text {
+    text-align: center;
+  }
+
+  .beHelp1-text h2 {
+    font-size: 2rem;
+  }
+
+  .beHelp1-text p {
+    font-size: 1rem;
+  }
+
+  .beHelp1-image img {
+    max-width: 90%;
+  }
+
+  .beHelp2 {
+    height: auto;
+    padding: 20px 5vw;
+  }
+
+  .beHelp2 h2 {
+    font-size: 2rem;
+  }
+
+  .beHelp2 p {
+    font-size: 1rem;
+  }
+
+  .beHelp3 {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .beHelp3-image img {
+    max-width: 90%;
+  }
+
+  .beHelp3-text {
+    text-align: center;
+  }
+
+  .beHelp3-text h2,
+  .beHelp3-text p {
+    text-align: center;
+  }
+
+  .beHelp3-text h2 {
+    font-size: 2rem;
+  }
+
+  .beHelp3-text p {
+    font-size: 1rem;
+  }
 }
