@@ -11,7 +11,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+const allowedOrigins = ['http://localhost:5173']; // You can add more origins if needed
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true, // Allow cookies if needed
+}));
 
 app.use(
   session({

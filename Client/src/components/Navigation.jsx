@@ -100,6 +100,7 @@ function Navigation({ user: propUser }) {
         </div>
       </div>
     </nav>
+
   );
 }
 

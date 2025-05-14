@@ -46,6 +46,7 @@
   }
   
   .bookings-section {
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -54,12 +55,13 @@
   
   .scrollable-bookings {
     max-height: 300px;
-    overflow-y: auto;
-    margin-top: 1rem;
+    overflow-y: auto !important;
+    flex-shrink: 0;
     padding-right: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
   }
+  
   
   .pending-bookings-table {
     width: 100%;
@@ -85,6 +87,38 @@
   
   .scrollable-bookings::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+  }
+  /*Buttons*/
+  .actions-col {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .approve-btn,
+  .reject-btn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .approve-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .reject-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .approve-btn:hover {
+    background-color: #218838;
+  }
+  
+  .reject-btn:hover {
+    background-color: #c82333;
   }
   
   /* Mobile responsiveness */

@@ -27,6 +27,30 @@ router.get("/", async (req, res) => {
         res.status(500).json({ error: "Database error" });
     }
 });
+// Route to update booking status
+// Route to update booking status
+router.put("/:id", (req, res) => {
+  const bookingId = req.params.id;
+  const { status } = req.body;
 
+  if (!status) {
+    return res.status(400).json({ error: "Status is required" });
+  }
 
+  const sql = "UPDATE bookings SET status = ? WHERE id = ?";
+  db.query(sql, [status, bookingId], (err, result) => {
+    if (err) {
+      console.error("DB error:", err);
+      return res.status(500).json({ error: "Database error" });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Booking not found" });
+    }
+
+    return res.status(200).json({ message: "Booking updated successfully" });
+  });
+});
+
+  
 module.exports = router;

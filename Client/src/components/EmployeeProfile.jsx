@@ -12,15 +12,12 @@ const EmployeeProfile = () => {
     const fetchPendingBookings = async () => {
       try {
         const response = await axios.get("http://localhost:3000/api/bookings");
-        if (Array.isArray(response.data)) {
-          const filtered = response.data.filter(b => b.status === "pending");
-          setPendingBookings(filtered);
-        } else if (Array.isArray(response.data.bookings)) {
-          const filtered = response.data.bookings.filter(b => b.status === "pending");
-          setPendingBookings(filtered);
-        } else {
-          setError("Unexpected data format.");
-        }
+        const data = Array.isArray(response.data)
+          ? response.data
+          : response.data.bookings;
+
+        const filtered = data.filter(b => b.status === "pending");
+        setPendingBookings(filtered);
       } catch (err) {
         console.error("Error fetching bookings:", err);
         setError("Failed to load bookings.");
@@ -31,6 +28,32 @@ const EmployeeProfile = () => {
       fetchPendingBookings();
     }
   }, [user]);
+
+  const updateStatus = async (bookingId, newStatus) => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/bookings/${bookingId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status: newStatus }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert(`Booking updated to ${newStatus}`);
+        // Handle successful update here
+      } else {
+        alert(`Error: ${data.error || "Failed to update booking status"}`);
+      }
+    } catch (err) {
+      alert(`Error: ${err.message}`);
+      console.error("Error:", err);
+    }
+  };
+  
+  
 
   return (
     <div className="profile-wrapper">
@@ -64,6 +87,7 @@ const EmployeeProfile = () => {
                     <th>Service ID</th>
                     <th>User Email</th>
                     <th>Booking Date</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -73,6 +97,20 @@ const EmployeeProfile = () => {
                       <td>{booking.service_id}</td>
                       <td>{booking.user_email}</td>
                       <td>{booking.booking_date}</td>
+                      <td className="actions-col">
+                        <button 
+                          className="approve-btn"
+                          onClick={() => updateStatus(booking.id, "confirmed")}
+                        >
+                          ✓
+                        </button>
+                        <button 
+                          className="reject-btn"
+                          onClick={() => updateStatus(booking.id, "canceled")}
+                        >
+                          ✗
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

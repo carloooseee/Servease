@@ -14,5 +14,9 @@ export const getProfile = () => API.get("/auth/profile");
 export const getServices = (category = "") =>
   API.get(`/api/services${category ? `?category=${category}` : ""}`);
 
+// Booking update API (for marking as taken or not taken)
+export const updateBookingStatus = (bookingId, status) =>
+  API.put(`/api/bookings/${bookingId}`, { status });
+
 
 export default API;

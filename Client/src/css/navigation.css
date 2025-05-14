@@ -3,6 +3,7 @@
   padding: 5px;
   border-radius: 5px;
   right: 0;
+  height: 1000vh;
 }
 
 .navbar-nav {
@@ -10,35 +11,15 @@
   display: flex;
   justify-content: flex-end; 
   align-items: center;
-}
-.navbar-collapse.show,
-.navbar-nav {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 9999 !important;
+  height: fit-content;
 }
 
-@media (max-width: 991px) {
-  .navbar-collapse {
-    position: absolute;
-    top: 56px;
-    left: 0;
-    width: 100%;
-    display: block !important; /* override Bootstrap glitch */
-    background-color: white;
-    z-index: 1050; /* higher than base elements */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
 
-  .navbar-collapse.collapse:not(.show) {
-    display: none !important;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding-left: 1rem;
-  }
+.navbar-collapse.collapse.show {
+  width: 100%;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: max-content;
 }
