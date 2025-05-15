@@ -1,6 +1,5 @@
-*{
-  overflow-x: hidden;
-  overflow-y:hidden;
+.map-container div{
+  overflow: visible !important;
 }
 .map-container {
   position: absolute;
@@ -9,6 +8,7 @@
   width: 100%;
   height: 90vh;
   overflow-x: hidden;
+  overflow: visible !important;
 }
 
 .map-controls {

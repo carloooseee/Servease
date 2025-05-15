@@ -41,7 +41,7 @@
   width: 150px;
   height: 120px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 50% !important;
   margin-bottom: 20px;
   border: 5px solid #006eff;
 }
