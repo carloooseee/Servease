@@ -129,6 +129,10 @@
 
 /* Responsive design */
 @media (max-width: 1024px) {
+    .aboutUs1{
+        margin-top: 50px;
+        height: 90%;
+    }
     .aboutUs1,
     .aboutUs3 {
         flex-direction: column;
