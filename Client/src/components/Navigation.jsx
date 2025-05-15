@@ -25,8 +25,10 @@ function Navigation({ user: propUser }) {
     window.location.href = "/"; // or use navigate
   };
 
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      
       <div className="container-fluid position-relative">
         <img src={Logo} alt="Servease Logo" width="100" />
         <button
@@ -48,8 +50,8 @@ function Navigation({ user: propUser }) {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Services">
-                Services
+              <Link className="nav-link" to="/About">
+                About us
               </Link>
             </li>
             <li className="nav-item">
@@ -58,8 +60,8 @@ function Navigation({ user: propUser }) {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/About">
-                About us
+              <Link className="nav-link" to="/Services">
+                Services
               </Link>
             </li>
             <li className="nav-item">
@@ -68,39 +70,42 @@ function Navigation({ user: propUser }) {
               </Link>
             </li>
 
-            <li className="nav-item dropdown">
-              {user ? (
-                <>
-                  <div
-                    className="nav-link dropdown-toggle"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                  >
-                    <img
-                      src={`https://ui-avatars.com/api/?name=${user.name || "User"}`}
-                      alt="Profile"
-                      style={{ width: "30px", height: "30px", borderRadius: "50%" }}
-                    />
-                  </div>
-                  <ul className="dropdown-menu dropdown-menu-end">
-                  <li>
-                      <Link className="dropdown-item" to={user.role === "employee" ? "/EmployeeProfile" : "/Profile"}>
-                        Profile
-                      </Link>
-                    </li>
+            <li className="nav-item dropdown mophead">
+  {user ? (
+    <>
+      <a
+        className="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src={`https://ui-avatars.com/api/?name=${user.name || "User"}`}
+          alt="Profile"
+          style={{ width: "30px", height: "30px", borderRadius: "50%"}}
+        />
+      </a>
+      <ul className="dropdown-menu dropdown-menu-end">
+        <li>
+          <Link className="dropdown-item" to={user.role === "employee" ? "/EmployeeProfile" : "/Profile"}>
+            Profile
+          </Link>
+        </li>
+        <li>
+          <button className="dropdown-item" onClick={handleLogout}>Logout</button>
+        </li>
+      </ul>
+    </>
+  ) : (
+    <Link className="nav-link" to="/Login">Login</Link>
+  )}
+</li>
 
-                    <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
-                  </ul>
-                </>
-              ) : (
-                <Link className="nav-link" to="/Login">Login</Link>
-              )}
-            </li>
           </ul>
         </div>
       </div>
     </nav>
-
   );
 }
 

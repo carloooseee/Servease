@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
         res.status(500).json({ error: "Database error" });
     }
 });
-// Route to update booking status
+
 // Route to update booking status
 router.put("/:id", (req, res) => {
   const bookingId = req.params.id;
@@ -51,6 +51,31 @@ router.put("/:id", (req, res) => {
     return res.status(200).json({ message: "Booking updated successfully" });
   });
 });
+// profile costumeer
+router.get("/", async (req, res) => {
+  const { email } = req.query;
+
+  if (!email) {
+    return res.status(400).json({ error: "Email query param is required" });
+  }
+
+  try {
+    const sql = "SELECT id, service_id, user_email, booking_date, status FROM bookings WHERE user_email = ?";
+    const [results] = await db.query(sql, [email]);
+    
+    console.log("Database Results:", results);  // Log the raw query results here
+    
+    res.status(200).json({ bookings: results });
+  } catch (err) {
+    console.error("Error fetching bookings:", err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+
+
+
+
 
   
 module.exports = router;

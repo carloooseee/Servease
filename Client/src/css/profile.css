@@ -1,47 +1,134 @@
-
+/* Ensure the whole profile page is centered vertically and horizontally */
 .profile-wrapper {
-     margin-top: 155px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    gap: 5%;
-    background-image: url("../images/profile.jpg");
-    background-size: cover;         
-    background-position: center;  
-    background-repeat: no-repeat;   
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../images/aboutUs1.png");
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+
+/* The main container for the profile content */
+.profile-content {
+  width: 100%;
+  max-width: 1900px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+}
+
+/* Welcome message at the top */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid #006eff;
+}
+
+/* Profile information container */
+.profile-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-container p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.profile-container p strong {
+  color: #333;
+}
+
+/* Bookings section below the profile */
+.bookings-section {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.bookings-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Scrollable area for bookings */
+.scrollable-bookings {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Booking table styling */
+.user-bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.user-bookings-table th, .user-bookings-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-bookings-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .profile-content {
+    width: 100%; /* Full width on mobile */
+    padding: 15px;
   }
-  
-  .profile-info {
-    width: 400px;
-    height: max-content;
-    margin: auto;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
+
   .profile-pic {
     width: 120px;
     height: 120px;
-    object-fit: cover;
-    border: 3px solid #0d6efd; /* Bootstrap blue */
   }
-  
-  .profile-info h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 600;
+
+  .welcome-section h2 {
+    font-size: 24px;
   }
-  
-  .profile-info p {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #333;
+
+  .bookings-section h3 {
+    font-size: 20px;
   }
-  
-  
+
+  .user-bookings-table {
+    font-size: 12px;
+  }
+}

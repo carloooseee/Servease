@@ -11,10 +11,9 @@ body {
   
   /* Login & Register Container */
   .login, .register {
-    background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
     width: 350px;
     text-align: center;
   }
@@ -22,7 +21,7 @@ body {
   /* Title */
   .login h2, .register h2 {
     margin-bottom: 1rem;
-    color: #333;
+    color: #091e3f;
   }
   
   /* Form Styles */

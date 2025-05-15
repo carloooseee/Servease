@@ -12,6 +12,7 @@
   background-image: url('../images/home.png');
   background-position: center;
   background-size: cover;
+  background-attachment: fixed ;
   box-sizing: border-box;
   height: 100vh;
   position: relative;
@@ -37,6 +38,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   animation: fadeInDown 1s ease;
+  color: #091e3f;
 }
 
 .cover-description {
@@ -44,7 +46,7 @@
   font-size: 1.1rem;
   margin: 5px 0;
   line-height: 1.5;
-  color: white;;
+  color: #091e3f;
 }
 
 .cover-buttons {
@@ -84,11 +86,12 @@
 
 .button1:hover {
   background-color: #ffffff !important;
-  color: #091e3f !important;
+  color: #164694 !important;
 }
 
 .button2 {
-  background-color: #f8f9fa !important; 
+  border: 1px solid black !important;
+  background-color: #ffffff !important; 
   color: #343a40;
 }
 
@@ -101,12 +104,16 @@
 /* --- SERVICES SECTION --- */
 .services-page {
   padding: 60px 20px;
-  background-color: #ffffff;
+  background-image: url('../images/home.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed ;
   text-align: center;
   height: max-content;
 }
 
 .services-title {
+  color: #091e3f;
   font-size: 2.5rem;
   margin-bottom: 40px;
   opacity: 0;
@@ -158,14 +165,17 @@
   font-size: 0.95rem;
   color: #555;
 }
-
+.services-book-btn{
+  background-color: #091e3f !important;
+  border: none !important;
+}
 .services-book-btn-container {
   margin-top: 30px;
 }
 
 /* --- REVIEWS SECTION --- */
 .reviews-page {
-  background-color: #fff;
+  background-color: #091e3f;
   padding: 60px 20px;
   display: flex;
   gap: 40px;
@@ -175,12 +185,16 @@
   width: 50%;
 }
 .reviews-left{
+  max-width: 500px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 } 
 .reviews-right {
   flex: 1 1 300px;
+  max-width: 500px;
 }
 
 .reviews-title {
@@ -190,7 +204,7 @@
 
 .reviews-description {
   font-size: 1rem;
-  color: #666;
+  color: #ffffff;
 }
 
 .review-box {
@@ -220,58 +234,76 @@
   object-fit: cover;
 }
 
-
+.carousel-caption *{
+  color: white;
+}
 
 /* --- CHOOSE US SECTION --- */
 .choose-us-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   padding: 60px 20px;
-  background-color: #fdfdfd;
-}
-.choose-us-page div{
-  max-width: 1000px;;
-}
-.choose-us-title {
+  background-color: #f9f9f9;
   text-align: center;
+}
+
+.choose-us-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
+  font-weight: 700;
+  color: #333;
 }
 
 .choose-us-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 40px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .choose-us-image-container {
-  flex: 1 1 300px;
+  flex: 1 1 400px;
+  max-width: 500px;
 }
 
 .choose-us-image {
   width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .choose-us-contacts {
   flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
 }
 
-.contact-section {
-  margin-bottom: 20px;
+.contact-section h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
 }
 
 .contact-icon {
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  vertical-align: middle;
+  fill: #091e3f;
 }
+
+.contact-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-left: 34px;
+}
+
 
 /* --- Animations --- */
 @keyframes fadeInDown {
@@ -292,6 +324,7 @@
   }
 
   .cover-description {
+    width: 90%;
     font-size: 1rem;
   }
 

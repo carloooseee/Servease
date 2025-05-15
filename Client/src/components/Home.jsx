@@ -4,6 +4,9 @@ import '../css/home.css';
 import homeCleaningImage from '../images/home_cleaning.jpg';
 import carCleaningImage from '../images/car_cleaning.jpg';
 import houseRepairsImage from '../images/house_repairs.jpg';
+import carousel1 from '../images/carouselCar.png';
+import carousel2 from '../images/carouselHouse.png';
+import carousel3 from '../images/carouselTechnician.png';
 import Footer from './Footer.jsx';
 
 const helpers = [
@@ -94,6 +97,7 @@ const Home = () => {
       {/* First and second sections remain unchanged */}
       <section className="cover-page">
         <div className="cover-overlay">
+          
           <h1 className="cover-title">SERVEASE</h1>
 
           <p className="cover-description">
@@ -109,7 +113,7 @@ Created with busy individuals in mind, ServEase offers flexible scheduling, tran
       </section>
 
       <section className="services-page">
-        <h2 className={`services-title ${animateTitle ? 'animate' : ''}`} ref={servicesTitleRef}>SERVICES</h2>
+        <h2 className={`services-title ${animateTitle ? 'animate' : ''}`} ref={servicesTitleRef}>What we Offer</h2>
         <div className="services-images">
           {helpers.map((helper, index) => (
             <div
@@ -126,7 +130,7 @@ Created with busy individuals in mind, ServEase offers flexible scheduling, tran
           ))}
         </div>
         <div className="services-book-btn-container">
-          <button className="btn btn-primary services-book-btn" onClick={() => navigate('/services')}>BOOK NOW</button>
+          <button className="btn btn-primary services-book-btn" onClick={() => navigate('/about')}>Learn more</button>
         </div>
       </section>
 
@@ -167,24 +171,24 @@ Created with busy individuals in mind, ServEase offers flexible scheduling, tran
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <img src={carousel1} className="d-block w-100 carousel-image" alt="Nature Scene" />
       <div className="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>Explore Breathtaking Nature</h5>
+        <p>Discover tranquil landscapes and reconnect with the beauty of the natural world.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <img src={carousel2} className="d-block w-100 carousel-image" alt="City Life" />
       <div className="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>Vibrant Urban Adventures</h5>
+        <p>Immerse yourself in the energy of city life, full of culture, lights, and excitement.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={homeCleaningImage} className="d-block w-100 carousel-image" alt="..." />
+      <img src={carousel3} className="d-block w-100 carousel-image" alt="Beach Paradise" />
       <div className="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>Relax by the Ocean</h5>
+        <p>Unwind on serene beaches with golden sands and the calming sound of waves.</p>
       </div>
     </div>
   </div>
@@ -199,44 +203,50 @@ Created with busy individuals in mind, ServEase offers flexible scheduling, tran
 </div>
 
 
+
       {/* Fifth section: Why choose us */}
       <section className="choose-us-page">
-        <h2 className="choose-us-title">Why choose us</h2>
-        <div className="choose-us-content">
-          <div className="choose-us-image-container">
-            <img src="https://th.bing.com/th/id/OIP.62MKXOoBgflUJdeB07JeLgHaE8?cb=iwc2&rs=1&pid=ImgDetMain" alt="Why choose us" className="choose-us-image" />
-          </div>
-          <div className="choose-us-contacts">
-            <div className="contact-section">
-              <h3>
-                <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11z"/>
-                </svg>
-                Phone
-              </h3>
-              <p>+1 (555) 123-4567</p>
-            </div>
-            <div className="contact-section">
-              <h3>
-                <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5V6l8 5 8-5v.01z"/>
-                </svg>
-                Email
-              </h3>
-              <p>contact@servease.com</p>
-            </div>
-            <div className="contact-section">
-              <h3>
-                <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
-                </svg>
-                Address
-              </h3>
-              <p>123 Servease St, City, Country</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <h2 className="choose-us-title">Why Choose Us</h2>
+  <div className="choose-us-content">
+    <div className="choose-us-image-container">
+      <img
+        src="https://th.bing.com/th/id/OIP.62MKXOoBgflUJdeB07JeLgHaE8?cb=iwc2&rs=1&pid=ImgDetMain"
+        alt="Why choose us"
+        className="choose-us-image"
+      />
+    </div>
+    <div className="choose-us-contacts">
+      <div className="contact-section">
+        <h3>
+          <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11z"/>
+          </svg>
+          Phone
+        </h3>
+        <p>+1 (555) 123-4567</p>
+      </div>
+      <div className="contact-section">
+        <h3>
+          <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5V6l8 5 8-5v.01z"/>
+          </svg>
+          Email
+        </h3>
+        <p>contact@servease.com</p>
+      </div>
+      <div className="contact-section">
+        <h3>
+          <svg className="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+          </svg>
+          Address
+        </h3>
+        <p>123 Servease St, City, Country</p>
+      </div>
+    </div>
+  </div>
+</section>
+
       <Footer/>
     </main>
   );

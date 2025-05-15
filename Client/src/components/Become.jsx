@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom"; // Import Link
 import beHelp from "../images/beHelp.png";
 import beHelpers from "../images/beHelpers.png";
+import Footer from './Footer.jsx';
 
 function Become() {
   return (
@@ -45,6 +46,7 @@ function Become() {
             </p>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

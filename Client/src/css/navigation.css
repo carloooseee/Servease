@@ -1,25 +1,47 @@
 .navbar-collapse {
-  background-color: rgb(255, 255, 255) !important; 
-  padding: 5px;
-  border-radius: 5px;
-  right: 0;
-  height: 1000vh;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  height: fit-content;
+  width: 100%;
+}
+.navbar {
+  overflow: visible !important;
+}
+
+.navbar-collapse {
+  overflow: visible !important;
 }
 
 .navbar-nav {
   width: 100%;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   align-items: center;
-  height: fit-content;
 }
 
+.mophead{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+}
+/* ✅ Let Bootstrap dropdown position itself properly */
+.dropdown-menu {
+  margin-top: -50px;
+  z-index: 9999;
+  overflow: visible !important;
+}
+.navbar-nav .dropdown-menu {
+  position: static !important;
+}
 
-.navbar-collapse.collapse.show {
-  width: 100%;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: max-content;
+/* ❌ Do NOT override position */
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
 }
