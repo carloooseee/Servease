@@ -23,6 +23,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Navigation user={user} /> 
+        
         <div className="box">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -1,0 +1,204 @@
+[33mcommit f0a9154ab2a5814f07d76c7eebd10c122ed0afa3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 15 13:01:28 2025 +0800
+
+    overflow map
+
+[33mcommit 6a5cfac02e9d5ffd702054c9afd3f0199c6afd89[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 15 12:42:48 2025 +0800
+
+    overflow content fix
+
+[33mcommit 8e987ba2e1b162d982d4e24d95bd6723167eb11f[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 15 12:19:31 2025 +0800
+
+    all
+
+[33mcommit 4b2413cd3c36090decec402a4830cae8bccd9a0e[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 14 15:44:50 2025 +0800
+
+    status change
+
+[33mcommit dff642f29e1bacd8d360be05020a4e45c999198c[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 14 01:20:35 2025 +0800
+
+    become
+
+[33mcommit 973f37d7bc2ebfb5987d09d054574e746cb6f1b7[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Tue May 13 01:02:04 2025 +0800
+
+    home page
+
+[33mcommit 569a737db4705afc0c054948bf631ab271dff99b[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Mon May 12 15:42:33 2025 +0800
+
+    overflow-x fix
+
+[33mcommit 4edcc3a0ea9e374ae68932265fc302b0dca2b694[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sun May 11 19:55:00 2025 +0800
+
+    pending bookings employee
+
+[33mcommit 8c85a55037b800d808537b4e0520b2daa6ecf85e[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 8 20:35:31 2025 +0800
+
+    home page
+
+[33mcommit 3d12eaf6ecd380bc6429c2c069d9ec285d4f68af[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 8 03:29:43 2025 +0800
+
+    login and register layout
+
+[33mcommit e9bc65df64d979209759e706e3e35ae4ca3a788a[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu May 8 03:21:42 2025 +0800
+
+    botnav issue
+
+[33mcommit e3659f419e86e74a73d930e135c6b4f66dcb8179[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 7 10:02:32 2025 +0800
+
+    employee dashboard
+
+[33mcommit be0dc6fd8f711b98b50d52af68051db07c83c0d2[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 7 09:59:54 2025 +0800
+
+    employee profile
+
+[33mcommit 519e4e7aee9728ac410bf66782804d379a00f9b3[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 7 09:55:26 2025 +0800
+
+    roles added
+
+[33mcommit e4f30045058afb932ae4dda9b1300ef6864185f3[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed May 7 07:23:30 2025 +0800
+
+    about us
+
+[33mcommit dd47479c15500435fd6c431d69f4135d9977a2df[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Tue May 6 22:27:52 2025 +0800
+
+    add about css
+
+[33mcommit 6cbce97a21775bcc1506b2c519775fe702f4eef3[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Tue May 6 22:23:42 2025 +0800
+
+    css service
+
+[33mcommit 759a7dc4869c57b534219a37d57b84cf7276e55d[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Apr 30 21:42:38 2025 +0800
+
+    slight services changes
+
+[33mcommit 62d932af27d3c0d7f04081c500550ba3edc726b2[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Tue Apr 29 19:06:22 2025 +0800
+
+    css changes services
+
+[33mcommit 53ddbf9c79fe95e416f8ff327fa1dd0906196c39[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sun Apr 27 22:40:28 2025 +0800
+
+    maps direction fix
+
+[33mcommit b99a03681a231c6904693fe189291eef21c0fa06[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Apr 23 15:28:50 2025 +0800
+
+    service css
+
+[33mcommit ff80e7ed05da586bead92eea0a8985e1399355b1[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Apr 23 15:07:12 2025 +0800
+
+    profile css
+
+[33mcommit af4c43ba993a2d0de585fee7965904cc4598ffd3[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sun Apr 20 23:53:41 2025 +0800
+
+    service condition user
+
+[33mcommit a495665db110feb56015ae539e82452a4e82e456[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu Apr 17 23:34:35 2025 +0800
+
+    profile functionality
+
+[33mcommit d5bbf965f44091fed81788c98f86913e7559fa19[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Mon Apr 14 18:55:46 2025 +0800
+
+    Local Storage User
+
+[33mcommit ab6b62e3234c5aa00888c799b7f737c696862fc9[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Mar 12 13:37:44 2025 +0800
+
+    midterm
+
+[33mcommit bf9b7b945128b36499d14add9cdbd7c27b76407a[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sun Mar 9 00:21:20 2025 +0800
+
+    stupid ass env
+
+[33mcommit 701ecc104f7ad4f2b6ee507a326231031b4c9c0d[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sat Mar 8 23:51:00 2025 +0800
+
+    nodemon start
+
+[33mcommit 1a59b997923b004a5088f9e52cfca26213fa9e7c[m[33m ([m[1;32mcarlos[m[33m)[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Sat Mar 8 23:46:26 2025 +0800
+
+    maps
+
+[33mcommit 074a67048e88c9ec23cf6e90d1af665c89b8cd78[m[33m ([m[1;32mmaps[m[33m)[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Thu Mar 6 12:39:45 2025 +0800
+
+    fix booking system
+
+[33mcommit e8592464d697b6e832fe39071e36cb1011e7b484[m
+Merge: c79f1a8 adb4b12
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Mar 5 03:16:24 2025 +0800
+
+    Merge branch 'main' of https://github.com/carloooseee/Servease
+
+[33mcommit c79f1a8dd9aeb95ac15dd61280b48a2a77e7fcdb[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Wed Mar 5 03:10:53 2025 +0800
+
+    Added and fixed features
+
+[33mcommit adb4b125feec9cab4d33c6c255f5cf7fc15f30ba[m
+Author: Carlos Laran <149790192+carloooseee@users.noreply.github.com>
+Date:   Mon Mar 3 23:01:53 2025 +0800
+
+    Update README.md
+
+[33mcommit 922055608c21d34f6860c26a8d50de0c98a3e7f1[m
+Author: Carlos Laran <carloooseeen@gmail.com>
+Date:   Mon Mar 3 22:57:29 2025 +0800
+
+    Servease first commit :)

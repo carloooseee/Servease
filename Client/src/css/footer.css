@@ -1,10 +1,10 @@
 .footer-container {
-    background-color: #f8f9fa;
+    background-color: #091e3f;
     color: #495057;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 3rem 2rem 1rem 2rem;
     text-align: center;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #ffffff;
     width: 100vw;
     box-sizing: border-box;
     margin: 0 auto;
@@ -24,7 +24,7 @@
   }
   
   .footer-links a {
-    color: #495057;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
@@ -39,8 +39,8 @@
   
   .footer-bottom {
     font-size: 0.75rem;
-    color: #6c757d;
-    border-top: 1px solid #dee2e6;
+    color: #ffffff;
+    /* border-top: 1px solid #ffffff; */
     padding-top: 1rem;
     margin-top: 2rem;
   }
