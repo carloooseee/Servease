@@ -5,6 +5,12 @@ import "../css/navigation.css";
 
 function Navigation({ user: propUser }) {
   const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     try {
@@ -25,6 +31,10 @@ function Navigation({ user: propUser }) {
     window.location.href = "/"; // or use navigate
   };
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -68,6 +78,11 @@ function Navigation({ user: propUser }) {
               <Link className="nav-link" to="/Map">
                 Map
               </Link>
+            </li>
+            <li className="nav-item">
+              <button onClick={toggleTheme} className="nav-link btn btn-link">
+                {theme === 'light' ? '🌙 Dark' : '☀️ Light'} Mode
+              </button>
             </li>
 
             <li className="nav-item dropdown mophead">

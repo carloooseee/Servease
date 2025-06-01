@@ -1,10 +1,10 @@
 .footer-container {
-    background-color: #091e3f;
-    color: #495057;
+    background-color: var(--footer-bg-light, #f8f9fa);
+    color: var(--footer-text-light, #212529);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 3rem 2rem 1rem 2rem;
     text-align: center;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid var(--border-color-light, #dee2e6);
     width: 100vw;
     box-sizing: border-box;
     margin: 0 auto;
@@ -24,7 +24,7 @@
   }
   
   .footer-links a {
-    color: #ffffff;
+    color: var(--link-color-light, #0d6efd); /* Default link color for light mode */
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
@@ -34,17 +34,37 @@
   }
   
   .footer-links a:hover {
-    color: #007bff;
+    color: var(--link-hover-color-light, #0a58ca);
   }
   
   .footer-bottom {
     font-size: 0.75rem;
-    color: #ffffff;
-    /* border-top: 1px solid #ffffff; */
+    color: var(--footer-text-light, #212529); /* Match footer text color */
+    /* border-top: 1px solid var(--border-color-light, #dee2e6); */
     padding-top: 1rem;
     margin-top: 2rem;
   }
   
+  /* Dark Theme Overrides for Footer */
+  [data-bs-theme="dark"] .footer-container {
+    background-color: var(--footer-bg-dark, #1c1c1c);
+    color: var(--footer-text-dark, #dee2e6);
+    border-top: 1px solid var(--border-color-dark, #495057);
+  }
+
+  [data-bs-theme="dark"] .footer-links a {
+    color: var(--link-color-dark, #6ea8fe); /* Default link color for dark mode */
+  }
+
+  [data-bs-theme="dark"] .footer-links a:hover {
+    color: var(--link-hover-color-dark, #8bb9fe);
+  }
+
+  [data-bs-theme="dark"] .footer-bottom {
+    color: var(--footer-text-dark, #dee2e6);
+    /* border-top: 1px solid var(--border-color-dark, #495057); */
+  }
+
   @media (max-width: 768px) {
     .footer-links {
       gap: 1.5rem;

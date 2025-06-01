@@ -1,11 +1,84 @@
 
+:root {
+  /* Light Theme Variables */
+  --bg-color-light: #ffffff;
+  --text-color-light: #212529;
+  --primary-color-light: #007bff;
+  --secondary-color-light: #6c757d;
+  --border-color-light: #dee2e6;
+  --card-bg-light: #fff;
+  --card-border-color-light: rgba(0, 0, 0, 0.175);
+  --link-color-light: #0d6efd;
+  --link-hover-color-light: #0a58ca;
+  --navbar-bg-light: #f8f9fa; /* Or a custom one if needed */
+  --footer-bg-light: #f8f9fa;
+  --footer-text-light: #212529;
+
+  /* Accent colors (example: for sections with a distinct background) */
+  --accent-bg-light: #091e3f; /* Existing dark blue from home.css */
+  --accent-text-light: #ffffff;
+  --accent-bg-dark: #2a3b52; /* A darker, muted blue for dark mode */
+  --accent-text-dark: #e0e0e0;
+
+  /* Text on image (typically needs to stay consistent for contrast) */
+  --text-on-image: #ffffff;
+
+  /* Hover/Active states (optional, can often be derived or use BS defaults) */
+  --primary-color-hover-light: #0056b3; /* Darker shade for light theme primary hover */
+  --primary-color-hover-dark: #3395ff;  /* Lighter/adjusted shade for dark theme primary hover */
+
+  /* Semantic Colors */
+  --danger-text-color: #dc3545; /* Bootstrap's danger color - stays same for dark usually */
+
+
+  /* Dark Theme Variables */
+  --bg-color-dark: #121212; /* Common dark bg */
+  --text-color-dark: #dee2e6; /* Light text for dark mode */
+  --primary-color-dark: #0d6efd; /* Bootstrap's default dark primary */
+  --secondary-color-dark: #adb5bd;
+  --border-color-dark: #495057; /* Darker border */
+  --card-bg-dark: #1e1e1e; /* Darker card background */
+  --card-border-color-dark: rgba(255, 255, 255, 0.125);
+  --link-color-dark: #6ea8fe; /* Lighter link for dark mode */
+  --link-hover-color-dark: #8bb9fe;
+  --navbar-bg-dark: #1c1c1c; /* Custom dark navbar */
+  --footer-bg-dark: #1c1c1c;
+  --footer-text-dark: #dee2e6;
+
+  /* Bootstrap variable overrides (optional, if defaults aren't enough) */
+  /* For example, if you want your custom text color to be the default body text */
+  /* --bs-body-color: var(--text-color-light); */
+  /* --bs-body-bg: var(--bg-color-light); */
+}
+
 /* Basic reset for body and html */
-html, body {
+html {
+  /* Apply Bootstrap's default theming for smooth transition */
+  color-scheme: light dark;
+}
+
+body {
   margin: 0;
   padding: 0;
   overflow: visible !important;
   overflow-x: hidden;
   height: auto !important;
+  background-color: var(--bs-body-bg, var(--bg-color-light)); /* Fallback to custom if bs var not present */
+  color: var(--bs-body-color, var(--text-color-light)); /* Fallback to custom */
+}
+
+[data-bs-theme="dark"] body {
+  background-color: var(--bs-body-bg, var(--bg-color-dark));
+  color: var(--bs-body-color, var(--text-color-dark));
+}
+
+/* Ensure Bootstrap variables for dark theme are applied if not already by BS */
+[data-bs-theme="dark"] {
+  --bs-body-color: var(--text-color-dark);
+  --bs-body-bg: var(--bg-color-dark);
+  --bs-border-color: var(--border-color-dark);
+  /* Add other global Bootstrap variable overrides for dark theme as needed */
+  /* e.g., --bs-emphasis-color: var(--text-color-dark); */
 }
 
 
@@ -38,8 +111,10 @@ section, div, main {
 
 /* Apply to entire document */
 * {
-  scrollbar-width: thin;          
-  scrollbar-color: #888 transparent;
+  scrollbar-width: thin;
+  /* Using variables for scrollbar might be tricky due to browser support,
+     but let's try with simple ones. These are non-standard. */
+  scrollbar-color: var(--secondary-color-light, #888) transparent;
 }
 
 /* Chrome, Edge, Safari */
@@ -49,15 +124,27 @@ section, div, main {
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent; /* Keep track transparent or use a variable */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: var(--secondary-color-light, #888);
   border-radius: 4px;
-  border: none;
+  border: none; /* Or use var(--border-color-light) */
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background-color: var(--primary-color-light, #555);
+}
+
+[data-bs-theme="dark"] * {
+  scrollbar-color: var(--secondary-color-dark, #555) transparent;
+}
+
+[data-bs-theme="dark"] *::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color-dark, #555);
+}
+
+[data-bs-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-dark, #888);
 }

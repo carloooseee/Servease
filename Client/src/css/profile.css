@@ -15,10 +15,10 @@
 .profile-content {
   width: 100%;
   max-width: 1900px;
-  background-color: white;
+  background-color: var(--card-bg-light, white);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--card-border-color-light, rgba(0, 0, 0, 0.1));
   display: flex;
   flex-direction: row; /* Stack elements vertically */
   align-items: center; /* Center horizontally */
@@ -32,7 +32,7 @@
 
 .welcome-section h2 {
   font-size: 28px;
-  color: #333;
+  color: var(--text-color-light, #333);
   margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@
   object-fit: cover;
   border-radius: 50% !important;
   margin-bottom: 20px;
-  border: 5px solid #006eff;
+  border: 5px solid var(--primary-color-light, #006eff);
 }
 
 /* Profile information container */
@@ -55,11 +55,11 @@
 .profile-container p {
   font-size: 16px;
   margin: 10px 0;
-  color: #555;
+  color: var(--text-color-light, #555);
 }
 
 .profile-container p strong {
-  color: #333;
+  color: var(--text-color-light, #333); /* Or a slightly more emphasized text color if available */
 }
 
 /* Bookings section below the profile */
@@ -72,7 +72,7 @@
 .bookings-section h3 {
   font-size: 24px;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-color-light, #333);
 }
 
 /* Scrollable area for bookings */
@@ -93,20 +93,60 @@
 .user-bookings-table th, .user-bookings-table td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color-light, #ddd);
 }
 
 .user-bookings-table th {
-  background-color: #f8f8f8;
+  background-color: var(--bg-color-light, #f8f8f8); /* Or a specific table header bg */
   font-weight: bold;
+  color: var(--text-color-light, #333); /* Ensure header text is readable */
 }
 
 /* Error message styling */
 .error {
-  color: red;
+  color: var(--danger-text-color, red);
   font-size: 16px;
   margin-bottom: 20px;
 }
+
+/* Dark Theme Overrides for profile.css */
+[data-bs-theme="dark"] .profile-content {
+  background-color: var(--card-bg-dark, #1e1e1e);
+  box-shadow: 0 4px 8px var(--card-border-color-dark, rgba(255,255,255,0.05));
+}
+
+[data-bs-theme="dark"] .welcome-section h2 {
+  color: var(--text-color-dark, #dee2e6);
+}
+
+[data-bs-theme="dark"] .profile-pic {
+  border: 5px solid var(--primary-color-dark, #0d6efd);
+}
+
+[data-bs-theme="dark"] .profile-container p {
+  color: var(--text-color-dark, #adb5bd);
+}
+
+[data-bs-theme="dark"] .profile-container p strong {
+  color: var(--text-color-dark, #dee2e6);
+}
+
+[data-bs-theme="dark"] .bookings-section h3 {
+  color: var(--text-color-dark, #dee2e6);
+}
+
+[data-bs-theme="dark"] .user-bookings-table th,
+[data-bs-theme="dark"] .user-bookings-table td {
+  border-bottom: 1px solid var(--border-color-dark, #495057);
+}
+
+[data-bs-theme="dark"] .user-bookings-table th {
+  background-color: var(--bg-color-dark, #121212); /* Or a specific dark table header bg */
+  color: var(--text-color-dark, #dee2e6);
+}
+
+/* Error color in dark theme remains the same for high visibility based on current variable setup */
+/* [data-bs-theme="dark"] .error { } */
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
