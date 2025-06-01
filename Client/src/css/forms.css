@@ -1,28 +1,32 @@
 /* General Styles */
+/* Body styles here are likely overridden by app.css or page-specific CSS.
+   If these were to take effect, they'd need variables too.
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color-light, #f4f4f4);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
+}
+*/
   
-  /* Login & Register Container */
-  .login, .register {
+/* Login & Register Container */
+.login, .register {
     padding: 2rem;
     border-radius: 10px;
-    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0px 4px 10px var(--card-border-color-light, rgba(0, 0, 0, 0.1)); */
     width: 350px;
     text-align: center;
-  }
+    background-color: var(--card-bg-light, #fff); /* Assuming forms are card-like */
+}
   
   /* Title */
-  .login h2, .register h2 {
+.login h2, .register h2 {
     margin-bottom: 1rem;
-    color: #091e3f;
-  }
+    color: var(--primary-color-light, #091e3f); /* Or --text-color-light */
+}
   
   /* Form Styles */
   form {
@@ -33,37 +37,83 @@ body {
   input {
     padding: 10px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color-light, #ccc);
     border-radius: 5px;
     font-size: 16px;
+    background-color: var(--bg-color-light, #fff); /* Input background */
+    color: var(--text-color-light, #212529);      /* Input text color */
   }
   
   /* Submit Button */
   input[type="submit"] {
-    background: #005289;
-    color: white;
+    background: var(--primary-color-light, #005289);
+    color: var(--accent-text-light, white); /* Text on primary button */
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    border: 1px solid var(--primary-color-light, #005289); /* Ensure border matches */
   }
   
   input[type="submit"]:hover {
-    background: #00375c;
+    background: var(--primary-color-hover-light, #00375c);
+    border-color: var(--primary-color-hover-light, #00375c);
   }
   
   /* Text Link */
-  p {
+  p { /* Assuming this p is inside the form container */
     margin-top: 1rem;
     font-size: 14px;
+    color: var(--text-color-light, #212529);
   }
   
   p a {
-    color: #007bff;
+    color: var(--link-color-light, #007bff);
     text-decoration: none;
     font-weight: bold;
   }
   
   p a:hover {
     text-decoration: underline;
+    color: var(--link-hover-color-light, #0056b3);
   }
-  
+
+/* Dark Theme Overrides for forms.css */
+[data-bs-theme="dark"] .login,
+[data-bs-theme="dark"] .register {
+    background-color: var(--card-bg-dark, #1e1e1e);
+    /* box-shadow: 0px 4px 10px var(--card-border-color-dark, rgba(255,255,255,0.05)); */
+}
+
+[data-bs-theme="dark"] .login h2,
+[data-bs-theme="dark"] .register h2 {
+    color: var(--primary-color-dark, #6ea8fe); /* Or --text-color-dark */
+}
+
+[data-bs-theme="dark"] input {
+    border: 1px solid var(--border-color-dark, #495057);
+    background-color: var(--bg-color-dark, #121212); /* Dark input background */
+    color: var(--text-color-dark, #dee2e6);      /* Light input text color */
+}
+
+[data-bs-theme="dark"] input[type="submit"] {
+    background: var(--primary-color-dark, #0d6efd);
+    color: var(--accent-text-dark, white); /* Text on primary button for dark mode */
+    border-color: var(--primary-color-dark, #0d6efd);
+}
+
+[data-bs-theme="dark"] input[type="submit"]:hover {
+    background: var(--primary-color-hover-dark, #3395ff);
+    border-color: var(--primary-color-hover-dark, #3395ff);
+}
+
+[data-bs-theme="dark"] p {
+    color: var(--text-color-dark, #dee2e6);
+}
+
+[data-bs-theme="dark"] p a {
+    color: var(--link-color-dark, #6ea8fe);
+}
+
+[data-bs-theme="dark"] p a:hover {
+    color: var(--link-hover-color-dark, #8bb9fe);
+}

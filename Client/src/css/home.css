@@ -4,7 +4,7 @@ main, section, div{
 }
 .home-container {
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
+  color: var(--text-on-image, #ffffff); /* Text on background images */
   padding: 0;
   margin: 0;
   overflow-x: hidden !important ;
@@ -25,7 +25,7 @@ main, section, div{
 }
 
 .cover-overlay {
-  color: white;
+  color: var(--text-on-image, white);
   text-align: center;
   padding: 10px;
   border-radius: 12px;
@@ -41,7 +41,7 @@ main, section, div{
   font-weight: bold;
   margin-bottom: 20px;
   animation: fadeInDown 1s ease;
-  color: #091e3f;
+  color: var(--primary-color-light, #091e3f); /* Assuming this is on a light or image background */
 }
 
 .cover-description {
@@ -49,7 +49,7 @@ main, section, div{
   font-size: 1.1rem;
   margin: 5px 0;
   line-height: 1.5;
-  color: #091e3f;
+  color: var(--primary-color-light, #091e3f); /* Assuming this is on a light or image background */
 }
 
 .cover-buttons {
@@ -78,29 +78,30 @@ main, section, div{
   text-align: center;
   display: inline-block;
   min-width: 140px;
-  background-color: #091e3f; 
+  background-color: var(--primary-color-light, #091e3f);
+  color: var(--accent-text-light, white); /* Text on primary button */
   margin: 10px;
 }
 
 .button1 {
-  background-color: #091e3f !important; 
-  color: white !important;
+  background-color: var(--primary-color-light, #091e3f) !important;
+  color: var(--accent-text-light, white) !important;
 }
 
 .button1:hover {
-  background-color: #ffffff !important;
-  color: #164694 !important;
+  background-color: var(--bg-color-light, #ffffff) !important; /* Lighter background on hover */
+  color: var(--primary-color-light, #164694) !important; /* Primary text color on hover */
 }
 
 .button2 {
-  border: 1px solid black !important;
-  background-color: #ffffff !important; 
-  color: #343a40;
+  border: 1px solid var(--text-color-light, black) !important;
+  background-color: var(--bg-color-light, #ffffff) !important;
+  color: var(--text-color-light, #343a40) !important;
 }
 
 .button2:hover {
-  background-color: #091e3f !important; 
-  color: white !important;
+  background-color: var(--primary-color-light, #091e3f) !important;
+  color: var(--accent-text-light, white) !important;
 }
 
 
@@ -116,7 +117,7 @@ main, section, div{
 }
 
 .services-title {
-  color: #091e3f;
+  color: var(--primary-color-light, #091e3f); /* Assuming this is on a light or image background */
   font-size: 2.5rem;
   margin-bottom: 40px;
   opacity: 0;
@@ -137,11 +138,11 @@ main, section, div{
 }
 
 .service-card {
-  background: white;
+  background: var(--card-bg-light, white);
   border-radius: 10px;
   width: 300px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px var(--card-border-color-light, rgba(0, 0, 0, 0.1)); /* Use variable for shadow too if defined */
   opacity: 0;
   transform: scale(0.9);
   transition: all 0.6s ease;
@@ -166,10 +167,11 @@ main, section, div{
 
 .service-description {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-color-light, #555);
 }
 .services-book-btn{
-  background-color: #091e3f !important;
+  background-color: var(--primary-color-light, #091e3f) !important;
+  color: var(--accent-text-light, white) !important; /* Added text color */
   border: none !important;
 }
 .services-book-btn-container {
@@ -178,7 +180,7 @@ main, section, div{
 
 /* --- REVIEWS SECTION --- */
 .reviews-page {
-  background-color: #091e3f;
+  background-color: var(--accent-bg-light, #091e3f);
   padding: 60px 20px;
   display: flex;
   gap: 40px;
@@ -193,7 +195,7 @@ main, section, div{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--accent-text-light, white);
 } 
 .reviews-right {
   flex: 1 1 300px;
@@ -207,15 +209,16 @@ main, section, div{
 
 .reviews-description {
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--accent-text-light, #ffffff);
 }
 
 .review-box {
-  background: #f1f1f1;
+  background: var(--card-bg-light, #f1f1f1); /* Or a specific very light grey variable */
   padding: 20px;
   margin-bottom: 20px;
-  border-left: 5px solid #007bff;
+  border-left: 5px solid var(--primary-color-light, #007bff);
   font-style: italic;
+  color: var(--text-color-light); /* Text color for review box content */
 }
 
 /* --- HELPERS SECTION --- */
@@ -238,13 +241,13 @@ main, section, div{
 }
 
 .carousel-caption *{
-  color: white;
+  color: var(--text-on-image, white);
 }
 
 /* --- CHOOSE US SECTION --- */
 .choose-us-page {
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background-color: var(--bg-color-light, #f9f9f9); /* Use main bg or a subtle variant */
   text-align: center;
 }
 
@@ -252,7 +255,7 @@ main, section, div{
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-color-light, #333);
 }
 
 .choose-us-content {
@@ -274,7 +277,7 @@ main, section, div{
   width: 100%;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px var(--card-border-color-light, rgba(0,0,0,0.1)); /* Variable for shadow */
 }
 
 .choose-us-contacts {
@@ -290,7 +293,7 @@ main, section, div{
   align-items: center;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
+  color: var(--text-color-light, #222);
   margin-bottom: 8px;
 }
 
@@ -298,15 +301,100 @@ main, section, div{
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  fill: #091e3f;
+  fill: var(--primary-color-light, #091e3f);
 }
 
 .contact-section p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-color-light, #555); /* Or --secondary-text-color-light */
   margin-left: 34px;
 }
 
+/* Dark Theme Overrides for home.css */
+[data-bs-theme="dark"] .cover-title,
+[data-bs-theme="dark"] .cover-description,
+[data-bs-theme="dark"] .services-title {
+  color: var(--primary-color-dark); /* Or --text-color-dark if it should be less prominent */
+}
+
+[data-bs-theme="dark"] .btn {
+  background-color: var(--primary-color-dark);
+  color: var(--accent-text-dark); /* Text on primary button for dark mode */
+}
+
+[data-bs-theme="dark"] .button1 {
+  background-color: var(--primary-color-dark) !important;
+  color: var(--accent-text-dark) !important;
+}
+
+[data-bs-theme="dark"] .button1:hover {
+  background-color: var(--bg-color-dark) !important;
+  color: var(--primary-color-dark) !important;
+}
+
+[data-bs-theme="dark"] .button2 {
+  border: 1px solid var(--text-color-dark) !important;
+  background-color: var(--bg-color-dark) !important;
+  color: var(--text-color-dark) !important;
+}
+
+[data-bs-theme="dark"] .button2:hover {
+  background-color: var(--primary-color-dark) !important;
+  color: var(--accent-text-dark) !important;
+}
+
+[data-bs-theme="dark"] .service-card {
+  background: var(--card-bg-dark);
+  box-shadow: 0 6px 18px var(--card-border-color-dark); /* Adjust shadow for dark */
+}
+
+[data-bs-theme="dark"] .service-description {
+  color: var(--text-color-dark);
+}
+
+[data-bs-theme="dark"] .services-book-btn {
+  background-color: var(--primary-color-dark) !important;
+  color: var(--accent-text-dark) !important;
+}
+
+[data-bs-theme="dark"] .reviews-page {
+  background-color: var(--accent-bg-dark);
+  color: var(--accent-text-dark);
+}
+
+[data-bs-theme="dark"] .reviews-description {
+  color: var(--accent-text-dark);
+}
+
+[data-bs-theme="dark"] .review-box {
+  background: var(--card-bg-dark); /* Darker card for review box */
+  border-left: 5px solid var(--primary-color-dark);
+  color: var(--text-color-dark);
+}
+
+[data-bs-theme="dark"] .choose-us-page {
+  background-color: var(--bg-color-dark); /* Or a subtle dark variant */
+}
+
+[data-bs-theme="dark"] .choose-us-title {
+  color: var(--text-color-dark);
+}
+
+[data-bs-theme="dark"] .choose-us-image {
+  box-shadow: 0 8px 16px var(--card-border-color-dark); /* Darker shadow */
+}
+
+[data-bs-theme="dark"] .contact-section h3 {
+  color: var(--text-color-dark);
+}
+
+[data-bs-theme="dark"] .contact-icon {
+  fill: var(--primary-color-dark);
+}
+
+[data-bs-theme="dark"] .contact-section p {
+  color: var(--text-color-dark); /* Or --secondary-text-color-dark */
+}
 
 /* --- Animations --- */
 @keyframes fadeInDown {
